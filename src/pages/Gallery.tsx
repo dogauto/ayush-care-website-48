@@ -1,6 +1,26 @@
+
 import { SectionHeading } from "@/components/ui/section-heading";
 import { CTAButton } from "@/components/ui/cta-button";
 import { Phone } from "lucide-react";
+
+const clinicBuildingImages = [
+  {
+    src: "/lovable-uploads/0d0766af-73be-402b-89c1-50e4a6071f03.png",
+    alt: "Ayush Health Care clinic frontage with shutter and car"
+  },
+  {
+    src: "/lovable-uploads/9f72e384-596e-421a-ad57-37bfee18af4b.png",
+    alt: "Consultation room at Ayush Health Care"
+  },
+  {
+    src: "/lovable-uploads/6452fe5b-acb6-4699-b681-0bdfcdc938cc.png",
+    alt: "Ayush Health Care exterior with signboard and open interior view"
+  },
+  {
+    src: "/lovable-uploads/711a9b0a-34ed-466f-a392-0cc0717c33e0.png",
+    alt: "Dr. S. Soma Rao at Ayush Health Care"
+  }
+];
 
 const Gallery = () => {
   return (
@@ -34,12 +54,15 @@ const Gallery = () => {
             className="animate-fade-in"
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-            {[1, 2, 3].map((num) => (
-              <div key={`exterior-${num}`} className="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all hover-scale animate-scale-in">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+            {clinicBuildingImages.map((img, idx) => (
+              <div
+                key={`exterior-img-${idx}`}
+                className="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all hover-scale animate-scale-in"
+              >
                 <img
-                  src="/placeholder.svg"
-                  alt={`Clinic Exterior View ${num}`}
+                  src={img.src}
+                  alt={img.alt}
                   className="w-full h-64 object-cover animate-fade-in"
                 />
               </div>
@@ -168,3 +191,4 @@ const Gallery = () => {
 };
 
 export default Gallery;
+
