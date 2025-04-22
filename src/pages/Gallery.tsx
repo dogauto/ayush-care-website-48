@@ -47,6 +47,33 @@ const consultationRoomImages = [
   }
 ];
 
+const treatmentFacilityImages = [
+  {
+    src: "/lovable-uploads/8e3599e2-5cf8-43e7-8db0-e8f5bc3d7771.png",
+    alt: "Treatment room with sliding glass partitions and medical examination table"
+  },
+  {
+    src: "/placeholder.svg", 
+    alt: "Treatment Room 2"
+  },
+  {
+    src: "/placeholder.svg", 
+    alt: "Treatment Room 3"
+  },
+  {
+    src: "/placeholder.svg", 
+    alt: "Treatment Room 4"
+  },
+  {
+    src: "/placeholder.svg", 
+    alt: "Treatment Room 5"
+  },
+  {
+    src: "/placeholder.svg", 
+    alt: "Treatment Room 6"
+  }
+];
+
 const Gallery = () => {
   return (
     <div className="animate-fade-in">
@@ -140,7 +167,7 @@ const Gallery = () => {
             ))}
           </div>
 
-          {/* Treatment Rooms */}
+          {/* Treatment Facilities */}
           <SectionHeading
             title="Treatment Facilities"
             subtitle="State-of-the-art equipment for advanced anorectal care"
@@ -149,11 +176,14 @@ const Gallery = () => {
           />
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-            {[1, 2, 3, 4, 5, 6].map((num) => (
-              <div key={`treatment-${num}`} className="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all hover-scale animate-scale-in">
+            {treatmentFacilityImages.map((img, idx) => (
+              <div 
+                key={`treatment-${idx}`} 
+                className="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all hover-scale animate-scale-in"
+              >
                 <img
-                  src="/placeholder.svg"
-                  alt={`Treatment Room ${num}`}
+                  src={img.src}
+                  alt={img.alt}
                   className="w-full h-64 object-cover animate-fade-in"
                 />
               </div>
