@@ -1,11 +1,10 @@
-
 import React from 'react';
 import { Link } from "react-router-dom";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { CTAButton } from "@/components/ui/cta-button";
 import { Phone, Clock, Check, ArrowRight } from "lucide-react";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
-// Service Card Component
 const ServiceCard = ({ title, description, imageUrl, link }: { title: string; description: string; imageUrl: string; link: string }) => {
   return (
     <Link to={link} className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all">
@@ -22,7 +21,6 @@ const ServiceCard = ({ title, description, imageUrl, link }: { title: string; de
   );
 };
 
-// Testimonial Card Component
 const TestimonialCard = ({ name, condition, quote }: { name: string; condition: string; quote: string }) => {
   return (
     <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all">
@@ -40,7 +38,6 @@ const TestimonialCard = ({ name, condition, quote }: { name: string; condition: 
   );
 };
 
-// Services Component - Moved before the main Home component
 const Services = () => {
   return (
     <section className="py-16">
@@ -88,10 +85,65 @@ const Services = () => {
   );
 };
 
+const StaffMembers = () => {
+  const doctors = [
+    {
+      name: "Dr. S. Soma Rao",
+      role: "Expert in Anorectal Diseases",
+      experience: "20+ Years",
+      imageUrl: "/lovable-uploads/711a9b0a-34ed-466f-a392-0cc0717c33e0.png",
+      pronouns: "(she/her)",
+      qualification: "Specialist in Anorectal Conditions"
+    },
+    {
+      name: "Dr. S.K Rao",
+      role: "Senior Surgeon",
+      experience: "45+ Years",
+      imageUrl: "/lovable-uploads/b966ae11-e2f5-447e-ae45-1c88cd8e945e.png",
+      pronouns: "(he/him)",
+      qualification: "B.U.M.S (Cal)"
+    }
+  ];
+
+  return (
+    <section className="py-16 bg-gray-50">
+      <div className="container mx-auto px-4">
+        <SectionHeading 
+          title="Our Doctors" 
+          subtitle="Meet the experts dedicated to providing compassionate and advanced anorectal care"
+          centered
+        />
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {doctors.map((doctor, index) => (
+            <div key={index} className="bg-white rounded-xl shadow-md p-6 flex items-center space-x-6">
+              <Avatar className="w-24 h-24">
+                <AvatarImage src={doctor.imageUrl} alt={doctor.name} />
+                <AvatarFallback>{doctor.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
+              </Avatar>
+              <div>
+                <h3 className="text-xl font-bold text-gray-800">
+                  {doctor.name} <span className="text-sm text-gray-600">{doctor.pronouns}</span>
+                </h3>
+                <p className="text-gray-600">{doctor.role}</p>
+                <p className="text-sm text-gray-500">
+                  <span className="font-semibold">Experience:</span> {doctor.experience}
+                </p>
+                <p className="text-sm text-gray-500">
+                  <span className="font-semibold">Qualification:</span> {doctor.qualification}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
 const Home = () => {
   return (
     <div>
-      {/* Hero Section */}
       <section className="relative bg-gradient-to-r from-ayush-50 to-herb-50 py-16 md:py-24">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center">
@@ -133,7 +185,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Stats Section */}
       <section className="bg-white py-16">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -153,11 +204,8 @@ const Home = () => {
         </div>
       </section>
 
-      {/* About Section */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
-
-          {/* SectionHeading for Dr. S. Soma Rao */}
           <SectionHeading 
             title="About Dr. S. Soma Rao" 
             subtitle="Expert in Anorectal Diseases with 20+ Years of Experience"
@@ -207,7 +255,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* NEW: About Senior Surgeon Section */}
       <section className="py-16 bg-[#F1F0FB]">
         <div className="container mx-auto px-4">
           <SectionHeading
@@ -258,10 +305,8 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Services Section */}
       <Services />
 
-      {/* Treatments Section */}
       <section className="py-16 bg-gradient-to-r from-ayush-50 to-herb-50">
         <div className="container mx-auto px-4">
           <SectionHeading 
@@ -338,7 +383,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Testimonials */}
       <section className="py-16">
         <div className="container mx-auto px-4">
           <SectionHeading 
@@ -373,7 +417,8 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Appointment CTA */}
+      <StaffMembers />
+
       <section className="bg-gradient-to-r from-ayush-600 to-herb-600 py-16">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
@@ -409,4 +454,3 @@ const Home = () => {
 };
 
 export default Home;
-
