@@ -218,9 +218,9 @@ const Services = () => {
           <div className="flex flex-col lg:flex-row items-center gap-12">
             <div className="lg:w-1/2">
               <img 
-                src="/placeholder.svg"
+                src="/lovable-uploads/f0cf37a4-a252-4119-bc5a-24df8d6f75b3.png"
                 alt="Fistula Treatment" 
-                className="rounded-xl shadow-md w-full h-auto"
+                className="rounded-xl shadow-md w-full h-auto object-cover"
               />
             </div>
             <div className="lg:w-1/2">

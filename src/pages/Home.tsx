@@ -145,7 +145,7 @@ const Home = () => {
             <ServiceCard 
               title="Fistula (ভগন্দর)"
               description="Specialized Ksharsutra therapy for complete healing of fistula."
-              imageUrl="/placeholder.svg"
+              imageUrl="/lovable-uploads/f0cf37a4-a252-4119-bc5a-24df8d6f75b3.png"
               link="/services#fistula"
             />
             <ServiceCard 
