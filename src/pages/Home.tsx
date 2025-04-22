@@ -121,48 +121,7 @@ const Home = () => {
       </section>
 
       {/* Services Section */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <SectionHeading 
-            title="Our Services" 
-            subtitle="Advanced treatments for all anorectal diseases with a blend of Ayurvedic wisdom and modern techniques."
-            centered
-          />
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <ServiceCard 
-              title="Piles (হেমোরয়েডস)"
-              description="Advanced treatment for hemorrhoids with minimal pain and quick recovery."
-              imageUrl="/lovable-uploads/49449a39-c5a9-4012-8208-e6065ecc117b.png"
-              link="/services#piles"
-            />
-            <ServiceCard 
-              title="Fissure (পায়খানার কাটা)"
-              description="Effective relief from painful anal fissures with long-lasting results."
-              imageUrl="/lovable-uploads/230315df-fc8d-448d-8a0b-008c20bf55e0.png"
-              link="/services#fissure"
-            />
-            <ServiceCard 
-              title="Fistula (ভগন্দর)"
-              description="Specialized Ksharsutra therapy for complete healing of fistula."
-              imageUrl="/lovable-uploads/f0cf37a4-a252-4119-bc5a-24df8d6f75b3.png"
-              link="/services#fistula"
-            />
-            <ServiceCard 
-              title="Rectal Prolapse (মলদ্বারের পতন)"
-              description="Painless and effective cure for rectal prolapse without complications."
-              imageUrl="/placeholder.svg"
-              link="/services#prolapse"
-            />
-          </div>
-          
-          <div className="mt-12 text-center">
-            <CTAButton to="/services" variant="primary" icon={<ArrowRight size={16} />}>
-              View All Services
-            </CTAButton>
-          </div>
-        </div>
-      </section>
+      <Services />
 
       {/* Treatments Section */}
       <section className="py-16 bg-gradient-to-r from-ayush-50 to-herb-50">
@@ -309,6 +268,53 @@ const Home = () => {
       </section>
     </div>
   );
+
+  const Services = () => {
+    return (
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <SectionHeading 
+            title="Our Services" 
+            subtitle="Advanced treatments for all anorectal diseases with a blend of Ayurvedic wisdom and modern techniques."
+            centered
+          />
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <ServiceCard 
+              title="Piles (হেমোরয়েডস)"
+              description="Advanced treatment for hemorrhoids with minimal pain and quick recovery."
+              imageUrl="/lovable-uploads/49449a39-c5a9-4012-8208-e6065ecc117b.png"
+              link="/services#piles"
+            />
+            <ServiceCard 
+              title="Fissure (পায়খানার কাটা)"
+              description="Effective relief from painful anal fissures with long-lasting results."
+              imageUrl="/lovable-uploads/230315df-fc8d-448d-8a0b-008c20bf55e0.png"
+              link="/services#fissure"
+            />
+            <ServiceCard 
+              title="Fistula (ভগন্দর)"
+              description="Specialized Ksharsutra therapy for complete healing of fistula."
+              imageUrl="/lovable-uploads/f0cf37a4-a252-4119-bc5a-24df8d6f75b3.png"
+              link="/services#fistula"
+            />
+            <ServiceCard 
+              title="Rectal Prolapse (মলদ্বারের পতন)"
+              description="Painless and effective cure for rectal prolapse without complications."
+              imageUrl="/lovable-uploads/e53c4a44-cdf6-49cd-b0e1-cc6f5c272fea.png"
+              link="/services#prolapse"
+            />
+          </div>
+          
+          <div className="mt-12 text-center">
+            <CTAButton to="/services" variant="primary" icon={<ArrowRight size={16} />}>
+              View All Services
+            </CTAButton>
+          </div>
+        </div>
+      </section>
+    );
+  };
 };
 
 // Service Card Component
