@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from "react-router-dom";
 import { SectionHeading } from "@/components/ui/section-heading";
@@ -155,6 +156,8 @@ const Home = () => {
       {/* About Section */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
+
+          {/* SectionHeading for Dr. S. Soma Rao */}
           <SectionHeading 
             title="About Dr. S. Soma Rao" 
             subtitle="Expert in Anorectal Diseases with 20+ Years of Experience"
@@ -198,6 +201,57 @@ const Home = () => {
               </div>
               <CTAButton to="/about" variant="secondary" icon={<ArrowRight size={16} />}>
                 Learn More About Us
+              </CTAButton>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* NEW: About Senior Surgeon Section */}
+      <section className="py-16 bg-[#F1F0FB]">
+        <div className="container mx-auto px-4">
+          <SectionHeading
+            title="About Dr. S.K Rao"
+            subtitle="Senior Surgeon & Proctology Specialist with 45+ Years of Experience"
+            centered
+          />
+          <div className="flex flex-col md:flex-row items-center gap-8">
+            <div className="md:w-1/3 mb-8 md:mb-0">
+              <div className="rounded-full overflow-hidden aspect-square bg-white border-4 border-white shadow-lg max-w-xs mx-auto">
+                <img
+                  src="/lovable-uploads/b966ae11-e2f5-447e-ae45-1c88cd8e945e.png"
+                  alt="Dr. S.K Rao"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+            <div className="md:w-2/3">
+              <p className="text-lg text-gray-700 mb-6">
+                Dr. S.K Rao <span className="italic">(he/him)</span> is our senior surgeon with <span className="font-bold">45+ years of expertise</span> in proctology. He is renowned as the best doctor and specialist for all proctological problems, bringing relief to even the toughest cases.
+              </p>
+              <p className="text-lg text-gray-700 mb-6">
+                He is recognized for handling complex and chronic conditions, always ensuring personalized care with the utmost compassion and advanced surgical skills.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+                <div className="flex items-center">
+                  <Check size={20} className="text-purple-600 mr-2" />
+                  <span className="text-gray-700">Senior Surgeon (B.U.M.S (Cal))</span>
+                </div>
+                <div className="flex items-center">
+                  <Check size={20} className="text-purple-600 mr-2" />
+                  <span className="text-gray-700">45+ Years of Experience</span>
+                </div>
+                <div className="flex items-center">
+                  <Check size={20} className="text-purple-600 mr-2" />
+                  <span className="text-gray-700">Expert in advanced proctological care</span>
+                </div>
+                <div className="flex items-center">
+                  <Check size={20} className="text-purple-600 mr-2" />
+                  <span className="text-gray-700">Trusted by thousands of patients</span>
+                </div>
+              </div>
+              <CTAButton to="/about" variant="secondary" icon={<ArrowRight size={16} />}>
+                See Dr. S.K Rao's Credentials
               </CTAButton>
             </div>
           </div>
@@ -355,3 +409,4 @@ const Home = () => {
 };
 
 export default Home;
+
