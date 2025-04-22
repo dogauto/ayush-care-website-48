@@ -1,4 +1,3 @@
-
 import { SectionHeading } from "@/components/ui/section-heading";
 import { CTAButton } from "@/components/ui/cta-button";
 import { Phone } from "lucide-react";
@@ -19,6 +18,17 @@ const clinicBuildingImages = [
   {
     src: "/lovable-uploads/711a9b0a-34ed-466f-a392-0cc0717c33e0.png",
     alt: "Dr. S. Soma Rao at Ayush Health Care"
+  }
+];
+
+const receptionAreaImages = [
+  {
+    src: "/lovable-uploads/16d848b0-a7b1-44d4-a693-ffb75dac2c85.png",
+    alt: "Reception area with desk, chairs, and global decoration"
+  },
+  {
+    src: "/lovable-uploads/6b1ae3ff-87f8-4780-a0c6-81b9af1b84b5.png",
+    alt: "Reception desk with staff member and decorative elements"
   }
 ];
 
@@ -77,13 +87,16 @@ const Gallery = () => {
             className="animate-fade-in"
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-            {[1, 2, 3].map((num) => (
-              <div key={`reception-${num}`} className="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all hover-scale animate-scale-in">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16 container mx-auto px-4">
+            {receptionAreaImages.map((img, idx) => (
+              <div 
+                key={`reception-${idx}`} 
+                className="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all hover-scale animate-scale-in"
+              >
                 <img
-                  src="/placeholder.svg"
-                  alt={`Reception Area ${num}`}
-                  className="w-full h-64 object-cover animate-fade-in"
+                  src={img.src}
+                  alt={img.alt}
+                  className="w-full h-64 md:h-96 object-cover animate-fade-in"
                 />
               </div>
             ))}
@@ -191,4 +204,3 @@ const Gallery = () => {
 };
 
 export default Gallery;
-
