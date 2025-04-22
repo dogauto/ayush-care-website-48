@@ -1,4 +1,3 @@
-
 import { SectionHeading } from "@/components/ui/section-heading";
 import { CTAButton } from "@/components/ui/cta-button";
 import { Phone } from "lucide-react";
@@ -111,16 +110,27 @@ const Gallery = () => {
           />
           
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            {[1, 2, 3, 4].map((num) => (
+            <div className="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all">
+              <img 
+                src="/lovable-uploads/711a9b0a-34ed-466f-a392-0cc0717c33e0.png"
+                alt="Dr. S. Soma Rao" 
+                className="w-full h-64 object-cover"
+              />
+              <div className="p-4">
+                <h3 className="font-bold text-gray-800">Dr. S. Soma Rao</h3>
+                <p className="text-gray-600">Lead Surgeon</p>
+              </div>
+            </div>
+            {[1, 2, 3].map((num) => (
               <div key={`team-${num}`} className="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all">
                 <img 
                   src="/placeholder.svg"
-                  alt={`Team Member ${num}`} 
+                  alt={`Staff Member ${num}`} 
                   className="w-full h-64 object-cover"
                 />
                 <div className="p-4">
-                  <h3 className="font-bold text-gray-800">{num === 1 ? "Dr. S. Soma Rao" : `Staff Member ${num}`}</h3>
-                  <p className="text-gray-600">{num === 1 ? "Lead Surgeon" : `Role ${num}`}</p>
+                  <h3 className="font-bold text-gray-800">{`Staff Member ${num}`}</h3>
+                  <p className="text-gray-600">{`Role ${num}`}</p>
                 </div>
               </div>
             ))}

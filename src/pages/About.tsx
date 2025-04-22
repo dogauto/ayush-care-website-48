@@ -1,4 +1,3 @@
-
 import { SectionHeading } from "@/components/ui/section-heading";
 import { CTAButton } from "@/components/ui/cta-button";
 import { Check, Phone } from "lucide-react";
@@ -25,9 +24,9 @@ const About = () => {
             <div className="lg:w-1/3">
               <div className="rounded-xl overflow-hidden bg-white shadow-lg">
                 <img 
-                  src="/placeholder.svg"
+                  src="/lovable-uploads/711a9b0a-34ed-466f-a392-0cc0717c33e0.png"
                   alt="Dr. S. Soma Rao" 
-                  className="w-full h-auto"
+                  className="w-full h-auto object-cover"
                 />
               </div>
             </div>

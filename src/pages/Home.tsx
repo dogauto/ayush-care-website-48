@@ -39,8 +39,8 @@ const Home = () => {
             <div className="md:w-1/2">
               <div className="rounded-xl overflow-hidden shadow-xl bg-white p-4">
                 <img 
-                  src="/placeholder.svg"
-                  alt="AYUSH Health Care Clinic" 
+                  src="/lovable-uploads/711a9b0a-34ed-466f-a392-0cc0717c33e0.png"
+                  alt="Dr. S. Soma Rao" 
                   className="w-full h-auto rounded-lg"
                 />
               </div>
