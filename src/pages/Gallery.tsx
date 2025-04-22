@@ -74,6 +74,19 @@ const treatmentFacilityImages = [
   }
 ];
 
+const doctors = [
+  {
+    name: "Dr. S. Soma Rao",
+    role: "Lead Surgeon",
+    image: "/lovable-uploads/f9eb8feb-91f9-48f2-b2d0-fd0861f2917b.png"
+  },
+  {
+    name: "Dr. S.K Rao",
+    role: "Senior Surgeon",
+    image: "/lovable-uploads/81d5c032-a05e-4a42-8b14-2b709113b2f9.png"
+  }
+];
+
 const Gallery = () => {
   return (
     <div className="animate-fade-in">
@@ -199,27 +212,19 @@ const Gallery = () => {
           />
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            <div className="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all hover-scale animate-scale-in">
-              <img
-                src="/lovable-uploads/711a9b0a-34ed-466f-a392-0cc0717c33e0.png"
-                alt="Dr. S. Soma Rao"
-                className="w-full h-64 object-cover animate-fade-in"
-              />
-              <div className="p-4">
-                <h3 className="font-bold text-gray-800">Dr. S. Soma Rao</h3>
-                <p className="text-gray-600">Lead Surgeon</p>
-              </div>
-            </div>
-            {[1, 2, 3].map((num) => (
-              <div key={`team-${num}`} className="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all hover-scale animate-scale-in">
+            {doctors.map((doctor, index) => (
+              <div 
+                key={`team-${index}`} 
+                className="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all hover-scale animate-scale-in"
+              >
                 <img
-                  src="/placeholder.svg"
-                  alt={`Staff Member ${num}`}
+                  src={doctor.image}
+                  alt={doctor.name}
                   className="w-full h-64 object-cover animate-fade-in"
                 />
                 <div className="p-4">
-                  <h3 className="font-bold text-gray-800">{`Staff Member ${num}`}</h3>
-                  <p className="text-gray-600">{`Role ${num}`}</p>
+                  <h3 className="font-bold text-gray-800">{doctor.name}</h3>
+                  <p className="text-gray-600">{doctor.role}</p>
                 </div>
               </div>
             ))}
