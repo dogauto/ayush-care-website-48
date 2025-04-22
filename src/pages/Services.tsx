@@ -138,8 +138,8 @@ const Services = () => {
           <div className="flex flex-col lg:flex-row-reverse items-center gap-12">
             <div className="lg:w-1/2">
               <img 
-                src="/lovable-uploads/18c77be6-866e-4a3d-b716-9582b0926a91.png"
-                alt="Anal Fissure Medical Illustration" 
+                src="/lovable-uploads/75aeec72-4cb2-4926-83a3-d6e2132e571c.png"
+                alt="Chronic Anal Fissure Medical Illustration" 
                 className="rounded-xl shadow-md w-full h-auto object-cover"
               />
             </div>
