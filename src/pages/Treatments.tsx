@@ -1,4 +1,3 @@
-
 import { SectionHeading } from "@/components/ui/section-heading";
 import { CTAButton } from "@/components/ui/cta-button";
 import { Check, Phone } from "lucide-react";
@@ -41,9 +40,9 @@ const Treatments = () => {
           <div className="flex flex-col lg:flex-row items-center gap-12">
             <div className="lg:w-1/2">
               <img 
-                src="/placeholder.svg"
-                alt="Laser Treatment" 
-                className="rounded-xl shadow-md w-full h-auto"
+                src="/lovable-uploads/8c9eb38b-45b7-44fc-8ffd-1bc8168981aa.png"
+                alt="Laser Treatment Procedure" 
+                className="rounded-xl shadow-md w-full h-auto object-cover"
               />
             </div>
             <div className="lg:w-1/2">
