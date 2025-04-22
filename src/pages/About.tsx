@@ -8,7 +8,7 @@ const About = () => {
         {/* Circular Human Image */}
         <div className="flex-shrink-0 flex items-center justify-center w-[320px] h-[320px] bg-gray-200 rounded-full shadow-md overflow-hidden border-4 border-white">
           <img
-            src="/lovable-uploads/28aac541-e12c-4675-9384-55188a161310.png"
+            src="/lovable-uploads/711a9b0a-34ed-466f-a392-0cc0717c33e0.png"
             alt="Dr. S. Soma Rao"
             className="object-cover w-full h-full"
             style={{ minWidth: 0, minHeight: 0 }}
