@@ -89,6 +89,7 @@ const Services = () => {
 const Home = () => {
   return (
     <div>
+      {/* First section about Dr. S. Soma Rao in Home page */}
       <section className="relative bg-gradient-to-r from-ayush-50 to-herb-50 py-16 md:py-24">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center">
@@ -120,7 +121,7 @@ const Home = () => {
             <div className="md:w-1/2">
               <div className="rounded-xl overflow-hidden shadow-xl bg-white p-4">
                 <img 
-                  src="/lovable-uploads/711a9b0a-34ed-466f-a392-0cc0717c33e0.png"
+                  src="/lovable-uploads/f9eb8feb-91f9-48f2-b2d0-fd0861f2917b.png"
                   alt="Dr. S. Soma Rao" 
                   className="w-full h-auto rounded-lg"
                 />
@@ -163,7 +164,7 @@ const Home = () => {
             <div className="md:w-1/3 mb-8 md:mb-0">
               <div className="rounded-full overflow-hidden aspect-square bg-white border-4 border-white shadow-lg max-w-xs mx-auto">
                 <img 
-                  src="/lovable-uploads/9f30bd39-3a36-4ea3-8c13-e7735f4a43b8.png"
+                  src="/lovable-uploads/f9eb8feb-91f9-48f2-b2d0-fd0861f2917b.png"
                   alt="Dr. S. Soma Rao" 
                   className="w-full h-full object-cover"
                 />

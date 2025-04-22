@@ -7,7 +7,7 @@ const doctors = [
     name: "Dr. S. Soma Rao",
     role: "Expert in Anorectal Diseases",
     experience: "20+ Years",
-    imageUrl: "/lovable-uploads/711a9b0a-34ed-466f-a392-0cc0717c33e0.png",
+    imageUrl: "/lovable-uploads/f9eb8feb-91f9-48f2-b2d0-fd0861f2917b.png",
     pronouns: "(she/her)",
     qualification: "Specialist in Anorectal Conditions"
   },
