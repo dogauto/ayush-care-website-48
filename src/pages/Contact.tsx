@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
@@ -251,10 +250,16 @@ const Contact = () => {
           />
           
           <div className="rounded-xl overflow-hidden shadow-sm h-[400px]">
-            {/* Replace with actual Google Maps embed code */}
-            <div className="w-full h-full bg-gray-200 flex items-center justify-center">
-              <p className="text-gray-500">Google Maps will be embedded here</p>
-            </div>
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3684.065708877237!2d88.41352637427606!3d22.57953813617391!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0275acdf1dde79%3A0x9d21975f53d4d625!2sAyush%20Health%20Care!5e0!3m2!1sen!2sin!4v1719248901882!5m2!1sen!2sin" 
+              width="100%" 
+              height="400" 
+              style={{ border: 0 }} 
+              allowFullScreen 
+              loading="lazy" 
+              referrerPolicy="no-referrer-when-downgrade"
+              className="w-full h-full"
+            />
           </div>
         </div>
       </section>
