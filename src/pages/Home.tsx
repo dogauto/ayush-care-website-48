@@ -1,10 +1,11 @@
+
 import React from 'react';
 import { Link } from "react-router-dom";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { CTAButton } from "@/components/ui/cta-button";
 import { Phone, Clock, Check, ArrowRight } from "lucide-react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import StaffMembers from "@/components/StaffMembers";
+import StaffSection from "@/components/StaffSection"; // Updated import
 
 const ServiceCard = ({ title, description, imageUrl, link }: { title: string; description: string; imageUrl: string; link: string }) => {
   return (
@@ -129,6 +130,9 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* Replaced StaffMembers section with StaffSection for modularity */}
+      <StaffSection />
 
       <section className="bg-white py-16">
         <div className="container mx-auto px-4">
@@ -397,3 +401,4 @@ const Home = () => {
 };
 
 export default Home;
+
