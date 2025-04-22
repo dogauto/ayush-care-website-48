@@ -24,7 +24,7 @@ const About = () => {
             <div className="lg:w-1/3">
               <div className="rounded-xl overflow-hidden bg-white shadow-lg">
                 <img 
-                  src="/lovable-uploads/711a9b0a-34ed-466f-a392-0cc0717c33e0.png"
+                  src="/lovable-uploads/4fba4885-4752-49b5-bfc1-3c450bf4cea1.png"
                   alt="Dr. S. Soma Rao" 
                   className="w-full h-auto object-cover"
                 />
