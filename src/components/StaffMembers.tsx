@@ -15,9 +15,9 @@ const doctors = [
     name: "Dr. S.K Rao",
     role: "Senior Surgeon",
     experience: "45+ Years",
-    imageUrl: "/lovable-uploads/9f30bd39-3a36-4ea3-8c13-e7735f4a43b8.png", // Updated image
+    imageUrl: "/lovable-uploads/81d5c032-a05e-4a42-8b14-2b709113b2f9.png",
     pronouns: "(he/him)",
-    qualification: "B.U.M.S (Cal)"
+    qualification: "B.U.M.S (Cal) - Specialist in Anorectal Conditions"
   }
 ];
 

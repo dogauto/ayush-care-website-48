@@ -1,3 +1,4 @@
+
 import React from "react";
 
 const About = () => {
@@ -60,7 +61,7 @@ const About = () => {
         {/* Dr. S.K Rao Image */}
         <div className="flex-shrink-0 flex items-center justify-center w-[320px] h-[320px] bg-gray-200 rounded-full shadow-md overflow-hidden border-4 border-white">
           <img
-            src="/lovable-uploads/9f30bd39-3a36-4ea3-8c13-e7735f4a43b8.png"
+            src="/lovable-uploads/81d5c032-a05e-4a42-8b14-2b709113b2f9.png"
             alt="Dr. S.K Rao"
             className="object-cover w-full h-full"
             style={{ minWidth: 0, minHeight: 0 }}
@@ -75,7 +76,7 @@ const About = () => {
           </p>
           <div className="w-20 h-1 bg-purple-400 mb-6" />
           <p className="text-gray-700 text-lg mb-4 leading-relaxed">
-            Dr. S.K Rao (<span className="italic">he/him</span>) is our senior surgeon with over <span className="font-bold">45+ years of experience</span>. He is widely recognized as the best doctor and specialist for all proctological problems. His expertise and dedication have helped thousands find relief from even the most challenging cases.
+            Dr. S.K Rao (<span className="italic">he/him</span>) is our senior surgeon with over <span className="font-bold">45+ years of experience</span>. He is widely recognized as the best doctor and specialist for all proctological problems, including Anorectal Conditions. His expertise and dedication have helped thousands find relief from even the most challenging cases.
           </p>
           <p className="text-gray-700 text-lg mb-6 leading-relaxed">
             Renowned for a caring and attentive approach, he ensures every patient receives tailored, compassionate treatment using the most advanced and effective techniques available in proctology.

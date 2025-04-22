@@ -213,7 +213,7 @@ const Home = () => {
             <div className="md:w-1/3 mb-8 md:mb-0">
               <div className="rounded-full overflow-hidden aspect-square bg-white border-4 border-white shadow-lg max-w-xs mx-auto">
                 <img
-                  src="/lovable-uploads/b966ae11-e2f5-447e-ae45-1c88cd8e945e.png"
+                  src="/lovable-uploads/81d5c032-a05e-4a42-8b14-2b709113b2f9.png"
                   alt="Dr. S.K Rao"
                   className="w-full h-full object-cover"
                 />
@@ -221,7 +221,7 @@ const Home = () => {
             </div>
             <div className="md:w-2/3">
               <p className="text-lg text-gray-700 mb-6">
-                Dr. S.K Rao <span className="italic">(he/him)</span> is our senior surgeon with <span className="font-bold">45+ years of expertise</span> in proctology. He is renowned as the best doctor and specialist for all proctological problems, bringing relief to even the toughest cases.
+                Dr. S.K Rao <span className="italic">(he/him)</span> is our senior surgeon with <span className="font-bold">45+ years of expertise</span> in proctology. He is renowned as the best doctor and specialist for Anorectal Conditions, bringing relief to even the toughest cases.
               </p>
               <p className="text-lg text-gray-700 mb-6">
                 He is recognized for handling complex and chronic conditions, always ensuring personalized care with the utmost compassion and advanced surgical skills.
