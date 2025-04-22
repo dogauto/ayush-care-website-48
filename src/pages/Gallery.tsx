@@ -32,6 +32,21 @@ const receptionAreaImages = [
   }
 ];
 
+const consultationRoomImages = [
+  {
+    src: "/lovable-uploads/033a2ecf-e6db-41b0-b421-fcfe6a03921c.png", 
+    alt: "Consultation room with desk, chairs, and decorative elements"
+  },
+  {
+    src: "/placeholder.svg", 
+    alt: "Consultation Room 2"
+  },
+  {
+    src: "/placeholder.svg", 
+    alt: "Consultation Room 3"
+  }
+];
+
 const Gallery = () => {
   return (
     <div className="animate-fade-in">
@@ -111,11 +126,14 @@ const Gallery = () => {
           />
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-            {[1, 2, 3].map((num) => (
-              <div key={`consultation-${num}`} className="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all hover-scale animate-scale-in">
+            {consultationRoomImages.map((img, idx) => (
+              <div 
+                key={`consultation-${idx}`} 
+                className="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all hover-scale animate-scale-in"
+              >
                 <img
-                  src="/placeholder.svg"
-                  alt={`Consultation Room ${num}`}
+                  src={img.src}
+                  alt={img.alt}
                   className="w-full h-64 object-cover animate-fade-in"
                 />
               </div>
