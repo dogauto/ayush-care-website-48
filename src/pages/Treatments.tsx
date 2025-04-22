@@ -121,9 +121,9 @@ const Treatments = () => {
           <div className="flex flex-col lg:flex-row-reverse items-center gap-12">
             <div className="lg:w-1/2">
               <img 
-                src="/placeholder.svg"
+                src="/lovable-uploads/7e8ef28e-62fa-4fce-b75d-9c4971deda1e.png"
                 alt="Ksharsutra Therapy" 
-                className="rounded-xl shadow-md w-full h-auto"
+                className="rounded-xl shadow-md w-full h-auto object-cover"
               />
             </div>
             <div className="lg:w-1/2">
