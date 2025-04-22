@@ -82,7 +82,7 @@ const Home = () => {
             <div className="md:w-1/3 mb-8 md:mb-0">
               <div className="rounded-full overflow-hidden aspect-square bg-white border-4 border-white shadow-lg max-w-xs mx-auto">
                 <img 
-                  src="/placeholder.svg"
+                  src="/lovable-uploads/711a9b0a-34ed-466f-a392-0cc0717c33e0.png"
                   alt="Dr. S. Soma Rao" 
                   className="w-full h-full object-cover"
                 />
