@@ -1,7 +1,91 @@
+
 import { Link } from "react-router-dom";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { CTAButton } from "@/components/ui/cta-button";
 import { Phone, Clock, Check, ArrowRight } from "lucide-react";
+
+// Service Card Component
+const ServiceCard = ({ title, description, imageUrl, link }: { title: string; description: string; imageUrl: string; link: string }) => {
+  return (
+    <Link to={link} className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all">
+      <img src={imageUrl} alt={title} className="w-full h-48 object-cover" />
+      <div className="p-6">
+        <h3 className="text-xl font-bold mb-2 text-gray-800">{title}</h3>
+        <p className="text-gray-600 mb-4">{description}</p>
+        <div className="flex items-center text-ayush-600 font-medium">
+          <span>Learn More</span>
+          <ArrowRight size={16} className="ml-2" />
+        </div>
+      </div>
+    </Link>
+  );
+};
+
+// Testimonial Card Component
+const TestimonialCard = ({ name, condition, quote }: { name: string; condition: string; quote: string }) => {
+  return (
+    <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all">
+      <div className="mb-4">
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M14 12H6C5.4 12 5 12.4 5 13V21C5 21.6 5.4 22 6 22H10V26C10 26.6 10.4 27 11 27H12C12.6 27 13 26.6 13 26V13C13 12.4 12.6 12 12 12H14C14.6 12 15 11.6 15 11V10C15 9.4 14.6 9 14 9H6C5.4 9 5 9.4 5 10V11C5 11.6 5.4 12 6 12ZM31 12H23C22.4 12 22 12.4 22 13V21C22 21.6 22.4 22 23 22H27V26C27 26.6 27.4 27 28 27H29C29.6 27 30 26.6 30 26V13C30 12.4 29.6 12 29 12H31C31.6 12 32 11.6 32 11V10C32 9.4 31.6 9 31 9H23C22.4 9 22 9.4 22 10V11C22 11.6 22.4 12 23 12H31Z" fill="#0EA5E9" opacity="0.2" />
+        </svg>
+      </div>
+      <p className="text-gray-700 mb-6">{quote}</p>
+      <div>
+        <h4 className="font-bold text-gray-800">{name}</h4>
+        <p className="text-sm text-gray-600">{condition}</p>
+      </div>
+    </div>
+  );
+};
+
+// Services Component - Moved before the main Home component
+const Services = () => {
+  return (
+    <section className="py-16">
+      <div className="container mx-auto px-4">
+        <SectionHeading 
+          title="Our Services" 
+          subtitle="Advanced treatments for all anorectal diseases with a blend of Ayurvedic wisdom and modern techniques."
+          centered
+        />
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <ServiceCard 
+            title="Piles (হেমোরয়েডস)"
+            description="Advanced treatment for hemorrhoids with minimal pain and quick recovery."
+            imageUrl="/lovable-uploads/49449a39-c5a9-4012-8208-e6065ecc117b.png"
+            link="/services#piles"
+          />
+          <ServiceCard 
+            title="Fissure (পায়খানার কাটা)"
+            description="Effective relief from painful anal fissures with long-lasting results."
+            imageUrl="/lovable-uploads/230315df-fc8d-448d-8a0b-008c20bf55e0.png"
+            link="/services#fissure"
+          />
+          <ServiceCard 
+            title="Fistula (ভগন্দর)"
+            description="Specialized Ksharsutra therapy for complete healing of fistula."
+            imageUrl="/lovable-uploads/f0cf37a4-a252-4119-bc5a-24df8d6f75b3.png"
+            link="/services#fistula"
+          />
+          <ServiceCard 
+            title="Rectal Prolapse (মলদ্বারের পতন)"
+            description="Painless and effective cure for rectal prolapse without complications."
+            imageUrl="/lovable-uploads/e53c4a44-cdf6-49cd-b0e1-cc6f5c272fea.png"
+            link="/services#prolapse"
+          />
+        </div>
+        
+        <div className="mt-12 text-center">
+          <CTAButton to="/services" variant="primary" icon={<ArrowRight size={16} />}>
+            View All Services
+          </CTAButton>
+        </div>
+      </div>
+    </section>
+  );
+};
 
 const Home = () => {
   return (
@@ -266,88 +350,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-    </div>
-  );
-
-  const Services = () => {
-    return (
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <SectionHeading 
-            title="Our Services" 
-            subtitle="Advanced treatments for all anorectal diseases with a blend of Ayurvedic wisdom and modern techniques."
-            centered
-          />
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <ServiceCard 
-              title="Piles (হেমোরয়েডস)"
-              description="Advanced treatment for hemorrhoids with minimal pain and quick recovery."
-              imageUrl="/lovable-uploads/49449a39-c5a9-4012-8208-e6065ecc117b.png"
-              link="/services#piles"
-            />
-            <ServiceCard 
-              title="Fissure (পায়খানার কাটা)"
-              description="Effective relief from painful anal fissures with long-lasting results."
-              imageUrl="/lovable-uploads/230315df-fc8d-448d-8a0b-008c20bf55e0.png"
-              link="/services#fissure"
-            />
-            <ServiceCard 
-              title="Fistula (ভগন্দর)"
-              description="Specialized Ksharsutra therapy for complete healing of fistula."
-              imageUrl="/lovable-uploads/f0cf37a4-a252-4119-bc5a-24df8d6f75b3.png"
-              link="/services#fistula"
-            />
-            <ServiceCard 
-              title="Rectal Prolapse (মলদ্বারের পতন)"
-              description="Painless and effective cure for rectal prolapse without complications."
-              imageUrl="/lovable-uploads/e53c4a44-cdf6-49cd-b0e1-cc6f5c272fea.png"
-              link="/services#prolapse"
-            />
-          </div>
-          
-          <div className="mt-12 text-center">
-            <CTAButton to="/services" variant="primary" icon={<ArrowRight size={16} />}>
-              View All Services
-            </CTAButton>
-          </div>
-        </div>
-      </section>
-    );
-  };
-};
-
-// Service Card Component
-const ServiceCard = ({ title, description, imageUrl, link }: { title: string; description: string; imageUrl: string; link: string }) => {
-  return (
-    <Link to={link} className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all">
-      <img src={imageUrl} alt={title} className="w-full h-48 object-cover" />
-      <div className="p-6">
-        <h3 className="text-xl font-bold mb-2 text-gray-800">{title}</h3>
-        <p className="text-gray-600 mb-4">{description}</p>
-        <div className="flex items-center text-ayush-600 font-medium">
-          <span>Learn More</span>
-          <ArrowRight size={16} className="ml-2" />
-        </div>
-      </div>
-    </Link>
-  );
-};
-
-// Testimonial Card Component
-const TestimonialCard = ({ name, condition, quote }: { name: string; condition: string; quote: string }) => {
-  return (
-    <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all">
-      <div className="mb-4">
-        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M14 12H6C5.4 12 5 12.4 5 13V21C5 21.6 5.4 22 6 22H10V26C10 26.6 10.4 27 11 27H12C12.6 27 13 26.6 13 26V13C13 12.4 12.6 12 12 12H14C14.6 12 15 11.6 15 11V10C15 9.4 14.6 9 14 9H6C5.4 9 5 9.4 5 10V11C5 11.6 5.4 12 6 12ZM31 12H23C22.4 12 22 12.4 22 13V21C22 21.6 22.4 22 23 22H27V26C27 26.6 27.4 27 28 27H29C29.6 27 30 26.6 30 26V13C30 12.4 29.6 12 29 12H31C31.6 12 32 11.6 32 11V10C32 9.4 31.6 9 31 9H23C22.4 9 22 9.4 22 10V11C22 11.6 22.4 12 23 12H31Z" fill="#0EA5E9" opacity="0.2" />
-        </svg>
-      </div>
-      <p className="text-gray-700 mb-6">{quote}</p>
-      <div>
-        <h4 className="font-bold text-gray-800">{name}</h4>
-        <p className="text-sm text-gray-600">{condition}</p>
-      </div>
     </div>
   );
 };
