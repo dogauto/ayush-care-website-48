@@ -72,6 +72,7 @@ const Header = () => {
           <Link to="/testimonials" className="text-gray-700 hover:text-ayush-600 font-medium">Testimonials</Link>
           <Link to="/gallery" className="text-gray-700 hover:text-ayush-600 font-medium">Gallery</Link>
           <Link to="/faq" className="text-gray-700 hover:text-ayush-600 font-medium">FAQ</Link>
+          <Link to="/my-appointments" className="text-gray-700 hover:text-ayush-600 font-medium">My Appointments</Link>
           <Link to="/contact" className="text-gray-700 hover:text-ayush-600 font-medium">Contact</Link>
         </nav>
 
@@ -97,6 +98,7 @@ const Header = () => {
               <Link to="/testimonials" className="text-gray-700 hover:text-ayush-600 font-medium py-2" onClick={toggleMenu}>Testimonials</Link>
               <Link to="/gallery" className="text-gray-700 hover:text-ayush-600 font-medium py-2" onClick={toggleMenu}>Gallery</Link>
               <Link to="/faq" className="text-gray-700 hover:text-ayush-600 font-medium py-2" onClick={toggleMenu}>FAQ</Link>
+              <Link to="/my-appointments" className="text-gray-700 hover:text-ayush-600 font-medium py-2" onClick={toggleMenu}>My Appointments</Link>
               <Link to="/contact" className="text-gray-700 hover:text-ayush-600 font-medium py-2" onClick={toggleMenu}>Contact</Link>
               
               <Button asChild className="mt-2 rounded-full bg-gradient-to-r from-ayush-600 to-herb-600 hover:from-ayush-700 hover:to-herb-700 text-white font-medium w-full">

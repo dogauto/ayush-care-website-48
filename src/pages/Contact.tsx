@@ -4,14 +4,21 @@ import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { saveAppointment } from "@/services/appointmentService";
+import { useNavigate } from "react-router-dom";
+import { useToast } from "@/components/ui/use-toast";
 
 const Contact = () => {
+  const navigate = useNavigate();
+  const { toast } = useToast();
+  
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
     email: "",
     condition: "",
     message: "",
+    date: "",
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -26,8 +33,11 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
+    try {
+      // Save appointment to local storage
+      saveAppointment(formData);
+      
+      // Show success and reset form
       setIsSubmitting(false);
       setIsSubmitted(true);
       setFormData({
@@ -36,13 +46,28 @@ const Contact = () => {
         email: "",
         condition: "",
         message: "",
+        date: "",
       });
       
-      // Reset success message after a few seconds
+      toast({
+        title: "Appointment Requested",
+        description: "Your appointment request has been submitted successfully.",
+        variant: "default",
+      });
+      
+      // Reset success message after a few seconds and redirect
       setTimeout(() => {
         setIsSubmitted(false);
-      }, 5000);
-    }, 1500);
+        navigate("/my-appointments");
+      }, 3000);
+    } catch (error) {
+      setIsSubmitting(false);
+      toast({
+        title: "Error",
+        description: "There was an error submitting your appointment. Please try again.",
+        variant: "destructive",
+      });
+    }
   };
 
   return (
@@ -138,6 +163,14 @@ const Contact = () => {
                   <div className="bg-green-50 text-green-800 p-4 rounded-lg mb-6">
                     <h3 className="font-bold text-lg mb-2">Thank you for reaching out!</h3>
                     <p>We've received your appointment request and will contact you shortly to confirm the details.</p>
+                    <div className="mt-4">
+                      <Button 
+                        onClick={() => navigate("/my-appointments")}
+                        className="w-full bg-green-600 hover:bg-green-700 text-white"
+                      >
+                        View My Appointments
+                      </Button>
+                    </div>
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit}>
@@ -204,6 +237,21 @@ const Contact = () => {
                           <option value="Not Sure">Not Sure</option>
                           <option value="Other">Other</option>
                         </select>
+                      </div>
+                      
+                      <div>
+                        <label htmlFor="date" className="block text-sm font-medium text-gray-700 mb-1">
+                          Preferred Date *
+                        </label>
+                        <Input
+                          id="date"
+                          name="date"
+                          type="date"
+                          value={formData.date}
+                          onChange={handleChange}
+                          min={new Date().toISOString().split('T')[0]}
+                          required
+                        />
                       </div>
                     </div>
                     
