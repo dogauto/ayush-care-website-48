@@ -1,4 +1,3 @@
-
 import { SectionHeading } from "@/components/ui/section-heading";
 import { CTAButton } from "@/components/ui/cta-button";
 import { Check, Phone } from "lucide-react";
@@ -59,9 +58,9 @@ const Services = () => {
           <div className="flex flex-col lg:flex-row items-center gap-12">
             <div className="lg:w-1/2">
               <img 
-                src="/placeholder.svg"
-                alt="Piles Treatment" 
-                className="rounded-xl shadow-md w-full h-auto"
+                src="/lovable-uploads/9519ce77-7741-4810-9d01-5a6d095f994d.png"
+                alt="Medical illustration of Piles" 
+                className="rounded-xl shadow-md w-full h-auto object-cover"
               />
             </div>
             <div className="lg:w-1/2">
