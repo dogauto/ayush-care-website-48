@@ -1,4 +1,4 @@
-
+import React from 'react';
 import { Link } from "react-router-dom";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { CTAButton } from "@/components/ui/cta-button";
@@ -173,10 +173,10 @@ const Home = () => {
             </div>
             <div className="md:w-2/3">
               <p className="text-lg text-gray-700 mb-6">
-                Dr. S. Soma Rao is a highly experienced surgeon specializing in anorectal diseases. With over two decades of clinical expertise, he has successfully treated more than 50,000 patients suffering from conditions like Piles, Fissure, Fistula, and Rectal Prolapse.
+                Dr. S. Soma Rao is a highly experienced surgeon specializing in anorectal diseases. With over two decades of clinical expertise, she has successfully treated more than 50,000 patients suffering from conditions like Piles, Fissure, Fistula, and Rectal Prolapse.
               </p>
               <p className="text-lg text-gray-700 mb-6">
-                His unique approach combines the ancient wisdom of Ayurvedic-Ksharsutra treatments with modern surgical techniques, providing comprehensive care that addresses both the symptoms and root causes of anorectal conditions.
+                Her unique approach combines the ancient wisdom of Ayurvedic-Ksharsutra treatments with modern surgical techniques, providing comprehensive care that addresses both the symptoms and root causes of anorectal conditions.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
                 <div className="flex items-center">

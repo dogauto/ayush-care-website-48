@@ -1,4 +1,3 @@
-
 import React from "react";
 
 const About = () => {
@@ -26,10 +25,10 @@ const About = () => {
           <div className="w-20 h-1 bg-green-400 mb-6" />
 
           <p className="text-gray-700 text-lg mb-4 leading-relaxed">
-            Dr. S. Soma Rao is a highly experienced surgeon specializing in anorectal diseases. With over two decades of clinical expertise, he has successfully treated more than 50,000 patients suffering from conditions like Piles, Fissure, Fistula, and Rectal Prolapse.
+            Dr. S. Soma Rao is a highly experienced surgeon specializing in anorectal diseases. With over two decades of clinical expertise, she has successfully treated more than 50,000 patients suffering from conditions like Piles, Fissure, Fistula, and Rectal Prolapse.
           </p>
           <p className="text-gray-700 text-lg mb-6 leading-relaxed">
-            His unique approach combines the ancient wisdom of Ayurvedic-Ksharsutra treatments with modern surgical techniques, providing comprehensive care that addresses both the symptoms and root causes of anorectal conditions.
+            Her unique approach combines the ancient wisdom of Ayurvedic-Ksharsutra treatments with modern surgical techniques, providing comprehensive care that addresses both the symptoms and root causes of anorectal conditions.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-2 gap-x-8 mb-8">
             <div className="flex items-center gap-2 animate-fade-in">
@@ -63,4 +62,3 @@ const About = () => {
 };
 
 export default About;
-
