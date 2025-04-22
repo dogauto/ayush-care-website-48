@@ -1,11 +1,10 @@
-
 import React from 'react';
 import { Link } from "react-router-dom";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { CTAButton } from "@/components/ui/cta-button";
 import { Phone, Clock, Check, ArrowRight } from "lucide-react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import StaffSection from "@/components/StaffSection"; // Updated import
+import StaffSection from "@/components/StaffSection";
 
 const ServiceCard = ({ title, description, imageUrl, link }: { title: string; description: string; imageUrl: string; link: string }) => {
   return (
@@ -131,7 +130,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Replaced StaffMembers section with StaffSection for modularity */}
       <StaffSection />
 
       <section className="bg-white py-16">
@@ -165,7 +163,7 @@ const Home = () => {
             <div className="md:w-1/3 mb-8 md:mb-0">
               <div className="rounded-full overflow-hidden aspect-square bg-white border-4 border-white shadow-lg max-w-xs mx-auto">
                 <img 
-                  src="/lovable-uploads/711a9b0a-34ed-466f-a392-0cc0717c33e0.png"
+                  src="/lovable-uploads/9f30bd39-3a36-4ea3-8c13-e7735f4a43b8.png"
                   alt="Dr. S. Soma Rao" 
                   className="w-full h-full object-cover"
                 />
@@ -401,4 +399,3 @@ const Home = () => {
 };
 
 export default Home;
-

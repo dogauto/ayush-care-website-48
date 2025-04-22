@@ -15,7 +15,7 @@ const doctors = [
     name: "Dr. S.K Rao",
     role: "Senior Surgeon",
     experience: "45+ Years",
-    imageUrl: "/lovable-uploads/b966ae11-e2f5-447e-ae45-1c88cd8e945e.png",
+    imageUrl: "/lovable-uploads/9f30bd39-3a36-4ea3-8c13-e7735f4a43b8.png", // Updated image
     pronouns: "(he/him)",
     qualification: "B.U.M.S (Cal)"
   }

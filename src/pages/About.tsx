@@ -1,4 +1,3 @@
-
 import React from "react";
 
 const About = () => {
@@ -61,7 +60,7 @@ const About = () => {
         {/* Dr. S.K Rao Image */}
         <div className="flex-shrink-0 flex items-center justify-center w-[320px] h-[320px] bg-gray-200 rounded-full shadow-md overflow-hidden border-4 border-white">
           <img
-            src="/lovable-uploads/b966ae11-e2f5-447e-ae45-1c88cd8e945e.png"
+            src="/lovable-uploads/9f30bd39-3a36-4ea3-8c13-e7735f4a43b8.png"
             alt="Dr. S.K Rao"
             className="object-cover w-full h-full"
             style={{ minWidth: 0, minHeight: 0 }}
@@ -113,4 +112,3 @@ const About = () => {
 };
 
 export default About;
-
