@@ -58,7 +58,7 @@ const Services = () => {
           <div className="flex flex-col lg:flex-row items-center gap-12">
             <div className="lg:w-1/2">
               <img 
-                src="/lovable-uploads/9519ce77-7741-4810-9d01-5a6d095f994d.png"
+                src="/lovable-uploads/49449a39-c5a9-4012-8208-e6065ecc117b.png"
                 alt="Medical illustration of Piles" 
                 className="rounded-xl shadow-md w-full h-auto object-cover"
               />

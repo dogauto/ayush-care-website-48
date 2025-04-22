@@ -134,7 +134,7 @@ const Home = () => {
             <ServiceCard 
               title="Piles (হেমোরয়েডস)"
               description="Advanced treatment for hemorrhoids with minimal pain and quick recovery."
-              imageUrl="/placeholder.svg"
+              imageUrl="/lovable-uploads/49449a39-c5a9-4012-8208-e6065ecc117b.png"
               link="/services#piles"
             />
             <ServiceCard 
