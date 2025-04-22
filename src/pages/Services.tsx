@@ -65,7 +65,7 @@ const Services = () => {
             </div>
             <div className="lg:w-1/2">
               <SectionHeading 
-                title="Piles (হেমোরয়েডস)" 
+                title="Piles (হেমোরয়ে��স)" 
                 subtitle="Effective, permanent relief from hemorrhoids"
                 centered={false}
               />
@@ -138,7 +138,7 @@ const Services = () => {
           <div className="flex flex-col lg:flex-row-reverse items-center gap-12">
             <div className="lg:w-1/2">
               <img 
-                src="/lovable-uploads/75aeec72-4cb2-4926-83a3-d6e2132e571c.png"
+                src="/lovable-uploads/230315df-fc8d-448d-8a0b-008c20bf55e0.png"
                 alt="Chronic Anal Fissure Medical Illustration" 
                 className="rounded-xl shadow-md w-full h-auto object-cover"
               />

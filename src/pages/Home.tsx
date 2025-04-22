@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { CTAButton } from "@/components/ui/cta-button";
@@ -140,7 +139,7 @@ const Home = () => {
             <ServiceCard 
               title="Fissure (পায়খানার কাটা)"
               description="Effective relief from painful anal fissures with long-lasting results."
-              imageUrl="/placeholder.svg"
+              imageUrl="/lovable-uploads/230315df-fc8d-448d-8a0b-008c20bf55e0.png"
               link="/services#fissure"
             />
             <ServiceCard 
