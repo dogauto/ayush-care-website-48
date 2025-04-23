@@ -1,3 +1,4 @@
+
 import { SectionHeading } from "@/components/ui/section-heading";
 import { CTAButton } from "@/components/ui/cta-button";
 import { Phone, Video } from "lucide-react";
@@ -38,8 +39,8 @@ const consultationRoomImages = [
     alt: "Consultation room with desk, chairs, and decorative elements"
   },
   {
-    src: "/placeholder.svg", 
-    alt: "Consultation Room 2"
+    src: "/lovable-uploads/fc68d85e-7303-4b8d-8e58-ddd73ac41edd.png", 
+    alt: "Doctor in consultation room with medical equipment"
   },
   {
     src: "/placeholder.svg", 
