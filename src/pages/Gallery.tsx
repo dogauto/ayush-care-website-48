@@ -1,4 +1,3 @@
-
 import { SectionHeading } from "@/components/ui/section-heading";
 import { CTAButton } from "@/components/ui/cta-button";
 import { Phone, Video } from "lucide-react";
@@ -19,6 +18,14 @@ const clinicBuildingImages = [
   {
     src: "/lovable-uploads/711a9b0a-34ed-466f-a392-0cc0717c33e0.png",
     alt: "Dr. S. Soma Rao at Ayush Health Care"
+  },
+  {
+    src: "/lovable-uploads/8b1396e7-5366-48cc-929d-a8f7db7e8e13.png",
+    alt: "Ayush Health Care building exterior with surrounding area"
+  },
+  {
+    src: "/lovable-uploads/759a95d5-8032-4b60-8191-acd632c2e673.png",
+    alt: "Ayush Health Care building exterior from another angle"
   }
 ];
 
