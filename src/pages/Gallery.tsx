@@ -46,8 +46,8 @@ const consultationRoomImages = [
     alt: "Consultation room with desk, chairs, and decorative elements"
   },
   {
-    src: "/lovable-uploads/fc68d85e-7303-4b8d-8e58-ddd73ac41edd.png", 
-    alt: "Doctor in consultation room with medical equipment"
+    src: "/lovable-uploads/f1d60665-f083-4415-9ba2-ae60ca178a14.png",
+    alt: "Doctor in consultation room wearing blue traditional attire with stethoscope"
   },
   {
     src: "/placeholder.svg", 
