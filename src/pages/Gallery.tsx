@@ -1,6 +1,6 @@
 import { SectionHeading } from "@/components/ui/section-heading";
 import { CTAButton } from "@/components/ui/cta-button";
-import { Phone } from "lucide-react";
+import { Phone, Video } from "lucide-react";
 
 const clinicBuildingImages = [
   {
@@ -84,6 +84,21 @@ const doctors = [
     name: "Dr. S.K Rao",
     role: "Senior Surgeon",
     image: "/lovable-uploads/81d5c032-a05e-4a42-8b14-2b709113b2f9.png"
+  }
+];
+
+const clinicVideos = [
+  {
+    src: "/lovable-uploads/video-placeholder.mp4",
+    poster: "/placeholder.svg",
+    title: "Clinic Tour",
+    description: "Take a virtual tour of our modern medical facility"
+  },
+  {
+    src: "/lovable-uploads/video-placeholder.mp4",
+    poster: "/placeholder.svg",
+    title: "Treatment Procedures",
+    description: "Learn about our treatment procedures"
   }
 ];
 
@@ -199,6 +214,36 @@ const Gallery = () => {
                   alt={img.alt}
                   className="w-full h-64 object-cover animate-fade-in"
                 />
+              </div>
+            ))}
+          </div>
+
+          {/* Videos Section */}
+          <SectionHeading
+            title="Video Gallery"
+            subtitle="Watch our informative videos about the clinic and procedures"
+            centered={true}
+            className="animate-fade-in"
+          />
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16 container mx-auto px-4">
+            {clinicVideos.map((video, idx) => (
+              <div 
+                key={`video-${idx}`}
+                className="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all hover-scale animate-scale-in"
+              >
+                <video
+                  controls
+                  poster={video.poster}
+                  className="w-full aspect-video object-cover"
+                >
+                  <source src={video.src} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+                <div className="p-4">
+                  <h3 className="font-bold text-gray-800">{video.title}</h3>
+                  <p className="text-gray-600">{video.description}</p>
+                </div>
               </div>
             ))}
           </div>
