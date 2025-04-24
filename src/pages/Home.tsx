@@ -6,7 +6,7 @@ import { Phone, Clock, Check, ArrowRight } from "lucide-react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import StaffSection from "@/components/StaffSection";
 
-const AnimatedStat = ({ end, duration = 2000, label }: { end: number, duration?: number, label: string }) => {
+const AnimatedStat = ({ end, duration = 5000, label }: { end: number, duration?: number, label: string }) => {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
