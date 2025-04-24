@@ -1,5 +1,6 @@
 
 import { SectionHeading } from "@/components/ui/section-heading";
+import { CreditCard, Cash, Wallet, WalletCards, ShieldCheck } from "lucide-react";
 
 const WhyChooseUs = () => {
   return (
@@ -12,7 +13,7 @@ const WhyChooseUs = () => {
           className="text-white [&_span]:text-white [&_p]:text-white/90"
         />
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
           <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl hover:bg-white/20 transition-all">
             <div className="flex items-center mb-2">
               <span className="mr-3 text-3xl">✅</span>
@@ -39,6 +40,38 @@ const WhyChooseUs = () => {
           
           <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl hover:bg-white/20 transition-all">
             <div className="flex items-center mb-2">
+              <WalletCards className="mr-3 h-8 w-8 text-herb-300" />
+              <h3 className="text-xl font-bold">Cashless Treatment</h3>
+            </div>
+            <p className="text-white/80">Hassle-free cashless treatment facility available with major insurance providers.</p>
+          </div>
+
+          <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl hover:bg-white/20 transition-all">
+            <div className="flex items-center mb-2">
+              <Cash className="mr-3 h-8 w-8 text-herb-300" />
+              <h3 className="text-xl font-bold">Flexible EMI Options</h3>
+            </div>
+            <p className="text-white/80">Choose from No-Cost EMI and Low-Cost EMI plans to manage your treatment expenses.</p>
+          </div>
+
+          <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl hover:bg-white/20 transition-all">
+            <div className="flex items-center mb-2">
+              <CreditCard className="mr-3 h-8 w-8 text-herb-300" />
+              <h3 className="text-xl font-bold">Multiple Payment Options</h3>
+            </div>
+            <p className="text-white/80">Convenient payment options including credit cards, debit cards, and digital payments.</p>
+          </div>
+
+          <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl hover:bg-white/20 transition-all">
+            <div className="flex items-center mb-2">
+              <ShieldCheck className="mr-3 h-8 w-8 text-herb-300" />
+              <h3 className="text-xl font-bold">Insurance Claims Support</h3>
+            </div>
+            <p className="text-white/80">We support mediclaim and term insurance plan claims for your convenience.</p>
+          </div>
+
+          <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl hover:bg-white/20 transition-all">
+            <div className="flex items-center mb-2">
               <span className="mr-3 text-3xl">⏱️</span>
               <h3 className="text-xl font-bold">14 Days Recovery</h3>
             </div>
@@ -51,3 +84,4 @@ const WhyChooseUs = () => {
 };
 
 export default WhyChooseUs;
+
