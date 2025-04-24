@@ -1,4 +1,3 @@
-
 import WhyChooseUs from "@/components/sections/WhyChooseUs";
 import StaffSection from "@/components/StaffSection";
 import { Button } from "@/components/ui/button";
@@ -149,6 +148,31 @@ export const Home = () => {
           <Button asChild size="lg" className="bg-white text-ayush-700 hover:bg-gray-100">
             <Link to="/contact">Book Your Appointment</Link>
           </Button>
+        </div>
+      </section>
+
+      {/* Why Us Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <SectionHeading
+            title="Why Us?"
+            subtitle="Experience Excellence in Healthcare"
+            centered
+          />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+            <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all">
+              <h3 className="text-xl font-bold mb-3 text-ayush-600">Expert Care Team</h3>
+              <p className="text-gray-600">Led by Dr. S. Soma Rao with over 20 years of specialized experience in treating anorectal conditions.</p>
+            </div>
+            <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all">
+              <h3 className="text-xl font-bold mb-3 text-ayush-600">Advanced Technology</h3>
+              <p className="text-gray-600">State-of-the-art medical facilities combined with traditional Ayurvedic wisdom.</p>
+            </div>
+            <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all">
+              <h3 className="text-xl font-bold mb-3 text-ayush-600">Patient-Centric Approach</h3>
+              <p className="text-gray-600">Personalized treatment plans tailored to your specific condition and needs.</p>
+            </div>
+          </div>
         </div>
       </section>
     </div>
