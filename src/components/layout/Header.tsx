@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -15,6 +14,11 @@ const Header = () => {
     <header className="sticky top-0 z-50 w-full bg-white shadow-sm">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <Link to="/" className="flex items-center space-x-2">
+          <img 
+            src="/lovable-uploads/d65d69af-2bfc-4a12-a854-dceaf464d8b7.png" 
+            alt="Ayush Health Care Logo" 
+            className="h-10 w-10 mr-2" 
+          />
           <div className="font-bold text-2xl text-ayush-700">
             AYUSH <span className="text-herb-600">HEALTH CARE</span>
           </div>
