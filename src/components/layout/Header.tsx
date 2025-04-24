@@ -13,11 +13,11 @@ const Header = () => {
   return (
     <header className="sticky top-0 z-50 w-full bg-white shadow-sm">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-        <Link to="/" className="flex items-center space-x-2">
+        <Link to="/" className="flex items-center space-x-4">
           <img 
             src="/lovable-uploads/d65d69af-2bfc-4a12-a854-dceaf464d8b7.png" 
             alt="Ayush Health Care Logo" 
-            className="h-10 w-10 mr-2" 
+            className="h-16 w-16 mr-4 rounded-full shadow-md" 
           />
           <div className="font-bold text-2xl text-ayush-700">
             AYUSH <span className="text-herb-600">HEALTH CARE</span>
