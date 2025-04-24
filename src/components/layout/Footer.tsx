@@ -8,11 +8,18 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           <div>
-            <h3 className="text-xl font-bold mb-4 text-ayush-700">AYUSH <span className="text-herb-600">HEALTH CARE</span></h3>
-            <p className="text-gray-600 mb-4">
-              Complete Anorectal Care with Compassion & Expertise. Over 20 years of experience with 50,000+ successfully treated patients.
-            </p>
-            <div className="flex items-center space-x-4">
+            <div className="flex flex-col items-start gap-4">
+              <img 
+                src="/lovable-uploads/d65d69af-2bfc-4a12-a854-dceaf464d8b7.png" 
+                alt="Ayush Health Care Logo" 
+                className="h-24 w-24 mb-2" 
+              />
+              <h3 className="text-xl font-bold text-ayush-700">AYUSH <span className="text-herb-600">HEALTH CARE</span></h3>
+              <p className="text-gray-600">
+                Complete Anorectal Care with Compassion & Expertise. Over 20 years of experience with 50,000+ successfully treated patients.
+              </p>
+            </div>
+            <div className="flex items-center space-x-4 mt-4">
               {/* Social media icons could go here */}
             </div>
           </div>
