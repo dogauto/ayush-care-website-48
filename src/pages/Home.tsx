@@ -24,10 +24,20 @@ const AnimatedStat = ({ end, duration = 2000, label }: { end: number, duration?:
     window.requestAnimationFrame(step);
   }, [end, duration]);
 
+  const formatNumber = (num: number) => {
+    if (label === "Cure Rate") {
+      return `${num}%`;
+    }
+    if (num >= 1000) {
+      return num.toLocaleString() + (end > 20 ? '+' : '');
+    }
+    return `${num}${end > 20 ? '+' : ''}`;
+  };
+
   return (
     <div className="bg-gray-50 p-8 rounded-xl text-center shadow-sm hover:shadow-md transition-all">
       <h3 className="text-5xl font-bold text-ayush-600 mb-2">
-        {count}{end > 20 ? '+' : ''}
+        {formatNumber(count)}
       </h3>
       <p className="text-gray-700 font-medium">{label}</p>
     </div>
@@ -117,7 +127,6 @@ const Services = () => {
 const Home = () => {
   return (
     <div>
-      {/* First section about Dr. S. Soma Rao in Home page */}
       <section className="relative bg-gradient-to-r from-ayush-50 to-herb-50 py-16 md:py-24">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center">
