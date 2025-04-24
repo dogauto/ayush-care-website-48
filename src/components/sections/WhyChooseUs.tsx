@@ -1,6 +1,6 @@
 
 import { SectionHeading } from "@/components/ui/section-heading";
-import { CreditCard, Cash, Wallet, WalletCards, ShieldCheck } from "lucide-react";
+import { CreditCard, DollarSign, Wallet, WalletCards, ShieldCheck } from "lucide-react";
 
 const WhyChooseUs = () => {
   return (
@@ -48,7 +48,7 @@ const WhyChooseUs = () => {
 
           <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl hover:bg-white/20 transition-all">
             <div className="flex items-center mb-2">
-              <Cash className="mr-3 h-8 w-8 text-herb-300" />
+              <DollarSign className="mr-3 h-8 w-8 text-herb-300" />
               <h3 className="text-xl font-bold">Flexible EMI Options</h3>
             </div>
             <p className="text-white/80">Choose from No-Cost EMI and Low-Cost EMI plans to manage your treatment expenses.</p>
@@ -84,4 +84,3 @@ const WhyChooseUs = () => {
 };
 
 export default WhyChooseUs;
-
