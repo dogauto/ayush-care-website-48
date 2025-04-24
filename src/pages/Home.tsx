@@ -1,10 +1,38 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { CTAButton } from "@/components/ui/cta-button";
 import { Phone, Clock, Check, ArrowRight } from "lucide-react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import StaffSection from "@/components/StaffSection";
+
+const AnimatedStat = ({ end, duration = 2000, label }: { end: number, duration?: number, label: string }) => {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    let startTimestamp: number | null = null;
+    const step = (timestamp: number) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+      setCount(Math.floor(progress * end));
+      
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      }
+    };
+    
+    window.requestAnimationFrame(step);
+  }, [end, duration]);
+
+  return (
+    <div className="bg-gray-50 p-8 rounded-xl text-center shadow-sm hover:shadow-md transition-all">
+      <h3 className="text-5xl font-bold text-ayush-600 mb-2">
+        {count}{end > 20 ? '+' : ''}
+      </h3>
+      <p className="text-gray-700 font-medium">{label}</p>
+    </div>
+  );
+};
 
 const ServiceCard = ({ title, description, imageUrl, link }: { title: string; description: string; imageUrl: string; link: string }) => {
   return (
@@ -136,18 +164,18 @@ const Home = () => {
       <section className="bg-white py-16">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-gray-50 p-8 rounded-xl text-center shadow-sm hover:shadow-md transition-all">
-              <h3 className="text-5xl font-bold text-ayush-600 mb-2">20+</h3>
-              <p className="text-gray-700 font-medium">Years of Experience</p>
-            </div>
-            <div className="bg-gray-50 p-8 rounded-xl text-center shadow-sm hover:shadow-md transition-all">
-              <h3 className="text-5xl font-bold text-ayush-600 mb-2">50,000+</h3>
-              <p className="text-gray-700 font-medium">Patients Treated</p>
-            </div>
-            <div className="bg-gray-50 p-8 rounded-xl text-center shadow-sm hover:shadow-md transition-all">
-              <h3 className="text-5xl font-bold text-ayush-600 mb-2">100%</h3>
-              <p className="text-gray-700 font-medium">Cure Rate</p>
-            </div>
+            <AnimatedStat 
+              end={20} 
+              label="Years of Experience"
+            />
+            <AnimatedStat 
+              end={50000} 
+              label="Patients Treated"
+            />
+            <AnimatedStat 
+              end={100} 
+              label="Cure Rate"
+            />
           </div>
         </div>
       </section>
