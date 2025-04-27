@@ -77,7 +77,7 @@ const Header = () => {
           <Button asChild className="rounded-full bg-gradient-to-r from-ayush-600 to-herb-600 hover:from-ayush-700 hover:to-herb-700 text-white font-medium">
             <Link to="/contact" className="flex items-center gap-2">
               <Phone size={16} />
-              <span>9650 63755</span>
+              <span>+91 9695063755</span>
             </Link>
           </Button>
         </div>
@@ -101,7 +101,7 @@ const Header = () => {
               <Button asChild className="mt-2 rounded-full bg-gradient-to-r from-ayush-600 to-herb-600 hover:from-ayush-700 hover:to-herb-700 text-white font-medium w-full">
                 <Link to="/contact" className="flex items-center justify-center gap-2" onClick={toggleMenu}>
                   <Phone size={16} />
-                  <span>9650 63755</span>
+                  <span>+91 9695063755</span>
                 </Link>
               </Button>
             </nav>
