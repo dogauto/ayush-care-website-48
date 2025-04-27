@@ -1,4 +1,7 @@
 
+import React from 'react';
+import { Link } from 'react-router-dom';
+
 const Index = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-ayush-50 to-herb-50 p-4">
@@ -7,13 +10,13 @@ const Index = () => {
           Welcome to AYUSH Health Care
         </h1>
         <p className="text-xl text-gray-700 mb-8 animate-slide-in delay-200">
-          Specialized care for anorectal diseases by Dr. S. Soma Rao
+          Specialized care for anorectal diseases by Dr. S.K. Rao and Dr. S. Soma Rao
         </p>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10 animate-scale-in delay-300">
           <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all hover-scale">
             <h3 className="text-xl font-bold mb-3 text-ayush-600">Expert Care</h3>
-            <p className="text-gray-600">Over 20 years of specialized experience in treating anorectal conditions</p>
+            <p className="text-gray-600">Over 45 years of specialized experience in treating anorectal conditions</p>
           </div>
           
           <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all hover-scale">
