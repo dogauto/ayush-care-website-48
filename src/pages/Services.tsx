@@ -259,7 +259,7 @@ const Services = () => {
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row-reverse items-center gap-12">
             <div className="lg:w-1/2">
-              <img src="/lovable-uploads/e53c4a44-cdf6-49cd-b0e1-cc6f5c272fea.png" alt="Rectal Prolapse Treatment" className="rounded-xl shadow-md w-full h-auto object-cover" />
+              <img alt="Rectal Prolapse Treatment" className="rounded-xl shadow-md w-full h-auto object-cover" src="/lovable-uploads/b271d8ad-58e1-4f03-9c05-dc0bb514a8d9.jpg" />
             </div>
             <div className="lg:w-1/2">
               <SectionHeading title="Rectal Prolapse (মলদ্বারের পতন)" subtitle="Effective treatment for rectal tissue protrusion" centered={false} />
