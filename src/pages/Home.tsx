@@ -141,7 +141,7 @@ const Home: React.FC = () => {
               <div className="bg-white rounded-lg shadow-lg overflow-hidden">
                 <div className="flex flex-col md:flex-row">
                   <div className="md:w-1/3">
-                    <img src="/lovable-uploads/18c77be6-866e-4a3d-b716-9582b0926a91.png" alt="Dr. S. Soma Rao" className="w-full h-full object-cover" />
+                    <img alt="Dr. S. Soma Rao" className="w-full h-full object-cover" src="/lovable-uploads/9ab625a9-683a-40db-b113-1be88b16bfa9.jpg" />
                   </div>
                   <div className="md:w-2/3 p-6">
                     <h3 className="text-xl font-semibold text-gray-800">
@@ -150,9 +150,7 @@ const Home: React.FC = () => {
                     <p className="text-green-600 mb-2">
                       Chief Surgeon & Director
                     </p>
-                    <p className="text-gray-600 mb-4">
-                      M.S., M.Ch. (Gastroenterology)
-                    </p>
+                    <p className="text-gray-600 mb-4">B.A.M.S (Kol) (Proctologist)</p>
                     <p className="text-gray-600">
                       Expert in minimally invasive procedures and comprehensive
                       management of anorectal conditions.
@@ -289,7 +287,7 @@ const Home: React.FC = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-16 bg-green-600 text-white">
+        <section className="py-16 text-white bg-teal-500">
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl font-bold mb-4">
               Experience Expert Anorectal Care
