@@ -137,8 +137,7 @@ const Contact = () => {
                   <div>
                     <h3 className="font-bold text-gray-800 mb-1">Clinic Hours</h3>
                     <div className="text-gray-600">
-                      <p>Monday - Sunday : 10:00 AM - 1 PM (Morning shift)(Expect Tuesday and Thursday)
-                    </p>
+                      <p>Monday - Sunday : 10:00 AM - 1 PM (Morning shift)(Expect Tuesday and Thursday) </p>
                       <p>CLOSED ON Thursday and Tuesday  </p>
                     </div>
                   </div>
