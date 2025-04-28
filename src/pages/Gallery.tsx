@@ -97,10 +97,11 @@ const doctors = [
 
 const clinicVideos = [
   {
-    src: "/lovable-uploads/video-placeholder.mp4",
-    poster: "/placeholder.svg",
+    src: "https://www.youtube.com/embed/P4RSxtrA_yI",
+    poster: "/lovable-uploads/033a2ecf-e6db-41b0-b421-fcfe6a03921c.png",
     title: "Clinic Tour",
-    description: "Take a virtual tour of our modern medical facility"
+    description: "Take a virtual tour of our modern medical facility",
+    isYouTube: true
   },
   {
     src: "/lovable-uploads/video-placeholder.mp4",
@@ -240,14 +241,27 @@ const Gallery = () => {
                 key={`video-${idx}`}
                 className="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all hover-scale animate-scale-in"
               >
-                <video
-                  controls
-                  poster={video.poster}
-                  className="w-full aspect-video object-cover"
-                >
-                  <source src={video.src} type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
+                {video.isYouTube ? (
+                  <div className="relative w-full pt-[56.25%]">
+                    <iframe
+                      src={video.src}
+                      className="absolute top-0 left-0 w-full h-full"
+                      title={video.title}
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
+                  </div>
+                ) : (
+                  <video
+                    controls
+                    poster={video.poster}
+                    className="w-full aspect-video object-cover"
+                  >
+                    <source src={video.src} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                )}
                 <div className="p-4">
                   <h3 className="font-bold text-gray-800">{video.title}</h3>
                   <p className="text-gray-600">{video.description}</p>
