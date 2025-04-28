@@ -13,11 +13,11 @@ const doctors = [
   },
   {
     name: "Dr. S.K Rao",
-    role: "Senior Surgeon",
+    role: "Senior Consultant",
     experience: "45+ Years",
     imageUrl: "/lovable-uploads/81d5c032-a05e-4a42-8b14-2b709113b2f9.png",
     pronouns: "(he/him)",
-    qualification: "B.U.M.S (Cal) - Specialist in Anorectal Conditions"
+    qualification: "S.C.U.M (Cal) - Specialist in Anorectal Conditions"
   }
 ];
 
