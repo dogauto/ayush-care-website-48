@@ -123,7 +123,7 @@ const Services = () => {
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row-reverse items-center gap-12">
             <div className="lg:w-1/2">
-              <img src="/lovable-uploads/230315df-fc8d-448d-8a0b-008c20bf55e0.png" alt="Chronic Anal Fissure Medical Illustration" className="rounded-xl shadow-md w-full h-auto object-cover" />
+              <img alt="Chronic Anal Fissure Medical Illustration" className="rounded-xl shadow-md w-full h-auto object-cover" src="/lovable-uploads/ef820ee6-0995-42ae-b230-1ac35973505e.jpg" />
             </div>
             <div className="lg:w-1/2">
               <SectionHeading title="Fissure-in-Ano (পায়খানার কাটা)" subtitle="Permanent relief from painful anal fissures" centered={false} />
