@@ -108,7 +108,7 @@ const About = () => {
               <div className="bg-white rounded-lg shadow-lg overflow-hidden">
                 <div className="md:flex">
                   <div className="md:w-2/5">
-                    <img className="h-64 w-full object-cover md:h-full" src="/lovable-uploads/18c77be6-866e-4a3d-b716-9582b0926a91.png" alt="Dr. S. Soma Rao" />
+                    <img className="h-64 w-full object-cover md:h-full" alt="Dr. S. Soma Rao" src="/lovable-uploads/67bdaf36-015b-475d-9347-5ce9dfa77835.jpg" />
                   </div>
                   <div className="p-8 md:w-3/5">
                     <div className="uppercase tracking-wide text-sm text-green-600 font-semibold">
@@ -117,9 +117,7 @@ const About = () => {
                     <h3 className="mt-1 text-2xl font-semibold text-gray-800 leading-tight">
                       Dr. S. Soma Rao
                     </h3>
-                    <p className="mt-2 text-gray-600">
-                      M.S., M.Ch. (Gastroenterology)
-                    </p>
+                    <p className="mt-2 text-gray-600">B.A.M.S.(Cal) (proctologist)</p>
                     <p className="mt-4 text-gray-600">
                       Dr. S. Soma Rao is the founder and director of AYUSH
                       Health Care. With his extensive training in
