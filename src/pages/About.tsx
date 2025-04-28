@@ -1,114 +1,236 @@
 
 import React from "react";
+import { Button } from "@/components/ui/button";
+import StaffMembers from "@/components/StaffMembers";
 
 const About = () => {
   return (
-    <main className="bg-[#f8f9fa] py-16 min-h-[80vh]">
-      <div className="max-w-6xl mx-auto w-full px-4 flex flex-col md:flex-row items-center md:items-start gap-10">
-        {/* Dr. S. Soma Rao */}
-        <div className="flex-shrink-0 flex items-center justify-center w-[320px] h-[320px] bg-gray-200 rounded-full shadow-md overflow-hidden border-4 border-white">
-          <img
-            src="/lovable-uploads/f9eb8feb-91f9-48f2-b2d0-fd0861f2917b.png"
-            alt="Dr. S. Soma Rao"
-            className="object-cover w-full h-full"
-            style={{ minWidth: 0, minHeight: 0 }}
-          />
-        </div>
-        <div className="flex-1">
-          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-2">
-            About Dr. S. Soma Rao
-          </h2>
-          <p className="text-lg text-gray-600 mb-3 mt-1">
-            Expert in Anorectal Diseases with 20+ Years of Experience
-          </p>
-          <div className="w-20 h-1 bg-green-400 mb-6" />
-          <p className="text-gray-700 text-lg mb-4 leading-relaxed">
-            Dr. S. Soma Rao is a highly experienced surgeon specializing in anorectal diseases. With over two decades of clinical expertise, she has successfully treated more than 50,000 patients suffering from conditions like Piles, Fissure, Fistula, and Rectal Prolapse.
-          </p>
-          <p className="text-gray-700 text-lg mb-6 leading-relaxed">
-            Her unique approach combines the ancient wisdom of Ayurvedic-Ksharsutra treatments with modern surgical techniques, providing comprehensive care that addresses both the symptoms and root causes of anorectal conditions.
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-2 gap-x-8 mb-8">
-            <div className="flex items-center gap-2">
-              <span className="text-green-500 text-2xl">✔</span>
-              <span className="text-gray-800 text-base font-medium">100% Cure Assurance</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="text-green-500 text-2xl">✔</span>
-              <span className="text-gray-800 text-base font-medium">Personalized Treatment Plans</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="text-green-500 text-2xl">✔</span>
-              <span className="text-gray-800 text-base font-medium">Minimal Pain & Discomfort</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="text-green-500 text-2xl">✔</span>
-              <span className="text-gray-800 text-base font-medium">Quick Recovery Time</span>
+    <div className="min-h-screen">
+      <div className="bg-green-50 py-12">
+        <div className="container mx-auto px-4">
+          <h1 className="text-3xl md:text-4xl font-bold text-green-800 mb-6 text-center">
+            About AYUSH Health Care
+          </h1>
+          <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-md overflow-hidden">
+            <div className="md:flex">
+              <div className="md:flex-shrink-0">
+                <img
+                  className="h-48 w-full object-cover md:w-48"
+                  src="/lovable-uploads/033a2ecf-e6db-41b0-b421-fcfe6a03921c.png"
+                  alt="AYUSH Health Care"
+                />
+              </div>
+              <div className="p-8">
+                <div className="uppercase tracking-wide text-sm text-green-600 font-semibold">
+                  Established 1995
+                </div>
+                <p className="mt-2 text-gray-600">
+                  AYUSH Health Care is a specialized medical center dedicated to
+                  providing expert care for anorectal diseases. Founded by Dr. S.
+                  Soma Rao, our center has been serving patients with
+                  compassion, expertise, and the latest medical advancements for
+                  over 25 years.
+                </p>
+                <p className="mt-4 text-gray-600">
+                  Our mission is to improve the quality of life for patients
+                  suffering from anorectal conditions through personalized
+                  treatment plans, minimally invasive procedures, and
+                  comprehensive care.
+                </p>
+              </div>
             </div>
           </div>
-          <a
-            href="#"
-            className="inline-flex items-center px-6 py-3 rounded-lg border border-green-400 text-green-700 font-semibold hover:bg-green-50 transition-all duration-150 focus:outline-none focus:ring-2 focus:ring-green-300"
-          >
-            <span className="mr-2">Learn More About Us</span>
-            <span className="text-green-500 text-xl">→</span>
-          </a>
         </div>
       </div>
 
-      {/* Senior Surgeon Section (Dr. S.K Rao) */}
-      <div className="max-w-6xl mx-auto w-full px-4 flex flex-col md:flex-row-reverse items-center md:items-start gap-10 mt-20">
-        {/* Dr. S.K Rao Image */}
-        <div className="flex-shrink-0 flex items-center justify-center w-[320px] h-[320px] bg-gray-200 rounded-full shadow-md overflow-hidden border-4 border-white">
-          <img
-            src="/lovable-uploads/81d5c032-a05e-4a42-8b14-2b709113b2f9.png"
-            alt="Dr. S.K Rao"
-            className="object-cover w-full h-full"
-            style={{ minWidth: 0, minHeight: 0 }}
-          />
-        </div>
-        <div className="flex-1">
-          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-2">
-            About Dr. S.K Rao
+      <div className="container mx-auto px-4 py-12">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl md:text-3xl font-bold text-green-800 mb-6">
+            Our Vision & Values
           </h2>
-          <p className="text-lg text-gray-600 mb-3 mt-1">
-            Senior Surgeon <span className="font-semibold">(B.U.M.S (Cal))</span>
-          </p>
-          <div className="w-20 h-1 bg-purple-400 mb-6" />
-          <p className="text-gray-700 text-lg mb-4 leading-relaxed">
-            Dr. S.K Rao (<span className="italic">he/him</span>) is our senior surgeon with over <span className="font-bold">45+ years of experience</span>. He is widely recognized as the best doctor and specialist for all proctological problems, including Anorectal Conditions. His expertise and dedication have helped thousands find relief from even the most challenging cases.
-          </p>
-          <p className="text-gray-700 text-lg mb-6 leading-relaxed">
-            Renowned for a caring and attentive approach, he ensures every patient receives tailored, compassionate treatment using the most advanced and effective techniques available in proctology.
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-2 gap-x-8 mb-8">
-            <div className="flex items-center gap-2">
-              <span className="text-purple-500 text-2xl">✔</span>
-              <span className="text-gray-800 text-base font-medium">Specialist in Piles, Fissure, Fistula, and Rectal Prolapse</span>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold text-green-700 mb-4">
+                Our Vision
+              </h3>
+              <p className="text-gray-600">
+                To be the leading center of excellence in anorectal care,
+                recognized for our innovative treatments, research contributions,
+                and patient-centered approach.
+              </p>
             </div>
-            <div className="flex items-center gap-2">
-              <span className="text-purple-500 text-2xl">✔</span>
-              <span className="text-gray-800 text-base font-medium">Expertise in advanced proctological care</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="text-purple-500 text-2xl">✔</span>
-              <span className="text-gray-800 text-base font-medium">Best for complex & chronic cases</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="text-purple-500 text-2xl">✔</span>
-              <span className="text-gray-800 text-base font-medium">Trusted by thousands of patients</span>
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold text-green-700 mb-4">
+                Our Values
+              </h3>
+              <ul className="text-gray-600 space-y-2">
+                <li>• Patient comfort and dignity above all</li>
+                <li>• Excellence in medical care and outcomes</li>
+                <li>• Continuous learning and improvement</li>
+                <li>• Compassion and empathy in all interactions</li>
+                <li>• Transparency and ethical practice</li>
+              </ul>
             </div>
           </div>
-          <a
-            href="#"
-            className="inline-flex items-center px-6 py-3 rounded-lg border border-purple-400 text-purple-700 font-semibold hover:bg-purple-50 transition-all duration-150 focus:outline-none focus:ring-2 focus:ring-purple-300"
-          >
-            <span className="mr-2">See Dr. S.K Rao's Credentials</span>
-            <span className="text-purple-500 text-xl">→</span>
-          </a>
         </div>
       </div>
-    </main>
+
+      <div className="bg-gray-50 py-12">
+        <div className="container mx-auto px-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-green-800 mb-8 text-center">
+            Meet Our Expert Team
+          </h2>
+          <div className="max-w-6xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-8">
+              {/* Doctor 1 */}
+              <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+                <div className="md:flex">
+                  <div className="md:w-2/5">
+                    <img
+                      className="h-64 w-full object-cover md:h-full"
+                      src="/lovable-uploads/16d848b0-a7b1-44d4-a693-ffb75dac2c85.png"
+                      alt="Dr. S.K. Rao"
+                    />
+                  </div>
+                  <div className="p-8 md:w-3/5">
+                    <div className="uppercase tracking-wide text-sm text-green-600 font-semibold">
+                      Senior Consultant
+                    </div>
+                    <h3 className="mt-1 text-2xl font-semibold text-gray-800 leading-tight">
+                      Dr. S.K. Rao
+                    </h3>
+                    <p className="mt-2 text-gray-600">S.C.U.M(Cal)</p>
+                    <p className="mt-4 text-gray-600">
+                      Dr. S.K. Rao has over 20 years of experience specializing
+                      in anorectal surgeries and treatment of complex colorectal
+                      conditions. He has pioneered several minimally invasive
+                      techniques that have benefited thousands of patients.
+                    </p>
+                    <p className="mt-2 text-gray-600">
+                      His compassionate approach and dedication to patient
+                      education have made him a trusted name in the field of
+                      colorectal health.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Doctor 2 */}
+              <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+                <div className="md:flex">
+                  <div className="md:w-2/5">
+                    <img
+                      className="h-64 w-full object-cover md:h-full"
+                      src="/lovable-uploads/18c77be6-866e-4a3d-b716-9582b0926a91.png"
+                      alt="Dr. S. Soma Rao"
+                    />
+                  </div>
+                  <div className="p-8 md:w-3/5">
+                    <div className="uppercase tracking-wide text-sm text-green-600 font-semibold">
+                      Chief Surgeon & Director
+                    </div>
+                    <h3 className="mt-1 text-2xl font-semibold text-gray-800 leading-tight">
+                      Dr. S. Soma Rao
+                    </h3>
+                    <p className="mt-2 text-gray-600">
+                      M.S., M.Ch. (Gastroenterology)
+                    </p>
+                    <p className="mt-4 text-gray-600">
+                      Dr. S. Soma Rao is the founder and director of AYUSH
+                      Health Care. With his extensive training in
+                      gastroenterology and specialized expertise in anorectal
+                      surgeries, he has successfully treated over 15,000
+                      patients.
+                    </p>
+                    <p className="mt-2 text-gray-600">
+                      He is committed to providing the highest standard of care
+                      using the latest advancements in medical technology and
+                      surgical techniques.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <h3 className="text-xl font-semibold text-green-700 mt-12 mb-6">
+              Our Support Staff
+            </h3>
+            <StaffMembers />
+          </div>
+        </div>
+      </div>
+
+      <div className="container mx-auto px-4 py-12">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl md:text-3xl font-bold text-green-800 mb-6 text-center">
+            Our Facility
+          </h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div>
+              <img
+                className="rounded-lg shadow-md"
+                src="/lovable-uploads/033a2ecf-e6db-41b0-b421-fcfe6a03921c.png"
+                alt="AYUSH Health Care Facility"
+              />
+            </div>
+            <div>
+              <p className="text-gray-600 mb-4">
+                Our state-of-the-art facility is designed with patient comfort
+                and privacy in mind. We offer a calm, healing environment
+                equipped with the latest medical technology for diagnosis and
+                treatment.
+              </p>
+              <p className="text-gray-600 mb-4">
+                The center features modern consultation rooms, a minor procedure
+                suite, recovery areas, and dedicated spaces for patient education
+                and counseling.
+              </p>
+              <h3 className="text-lg font-semibold text-green-700 mb-2">
+                Facilities Include:
+              </h3>
+              <ul className="text-gray-600 space-y-1 mb-4">
+                <li>• Advanced diagnostic equipment</li>
+                <li>• Modern surgical suites for minimally invasive procedures</li>
+                <li>• Comfortable recovery spaces</li>
+                <li>• Private consultation rooms</li>
+                <li>• Patient education center</li>
+              </ul>
+              <Button
+                className="bg-green-600 hover:bg-green-700 text-white"
+                onClick={() => {
+                  window.scrollTo(0, 0);
+                  window.location.href = "/gallery";
+                }}
+              >
+                View Our Gallery
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="bg-green-600 py-12">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">
+            Experience Specialized Care at AYUSH Health Care
+          </h2>
+          <p className="text-white text-lg mb-8 max-w-3xl mx-auto">
+            Don't let anorectal conditions affect your quality of life. Our team
+            of experts is ready to provide you with personalized care and
+            effective treatment options.
+          </p>
+          <Button
+            className="bg-white text-green-600 hover:bg-gray-100"
+            onClick={() => {
+              window.scrollTo(0, 0);
+              window.location.href = "/contact";
+            }}
+          >
+            Schedule Your Consultation Today
+          </Button>
+        </div>
+      </div>
+    </div>
   );
 };
 

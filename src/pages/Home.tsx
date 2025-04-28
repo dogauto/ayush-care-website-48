@@ -1,182 +1,463 @@
-import WhyChooseUs from "@/components/sections/WhyChooseUs";
-import StaffSection from "@/components/StaffSection";
+
+import React from "react";
 import { Button } from "@/components/ui/button";
-import { SectionHeading } from "@/components/ui/section-heading";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import StaffSection from "@/components/StaffSection";
+import WhyChooseUs from "@/components/sections/WhyChooseUs";
 
-export const Home = () => {
+const Home: React.FC = () => {
+  const navigate = useNavigate();
+
   return (
-    <div>
-      {/* Hero Section */}
-      <section className="min-h-[70vh] flex items-center justify-center bg-gradient-to-r from-ayush-50 to-herb-50 p-4">
-        <div className="text-center w-full max-w-3xl mx-auto">
-          <h1 className="text-5xl font-bold mb-6 text-gray-800 animate-fade-in">
-            Welcome to AYUSH Health Care
-          </h1>
-          <p className="text-xl text-gray-700 mb-8 animate-slide-in delay-200">
-            Specialized care for anorectal diseases by Dr. S. Soma Rao
-          </p>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10 animate-scale-in delay-300">
-            <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all hover-scale">
-              <h3 className="text-xl font-bold mb-3 text-ayush-600">Expert Care</h3>
-              <p className="text-gray-600">Over 20 years of specialized experience in treating anorectal conditions</p>
-            </div>
-            
-            <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all hover-scale">
-              <h3 className="text-xl font-bold mb-3 text-herb-600">Advanced Treatments</h3>
-              <p className="text-gray-600">Combining ancient Ayurvedic wisdom with modern medical techniques</p>
+    <div className="flex flex-col min-h-screen">
+      <main className="flex-grow">
+        {/* Hero Section */}
+        <section className="relative bg-gradient-to-r from-green-50 to-teal-50 py-12 md:py-24">
+          <div className="container mx-auto px-4">
+            <div className="flex flex-col md:flex-row items-center">
+              <div className="md:w-1/2 md:pr-8">
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-green-800 mb-4">
+                  Welcome to AYUSH Health Care
+                </h1>
+                <p className="text-lg md:text-xl text-green-700 mb-6">
+                  Specialized care for anorectal diseases by Dr Sk Rao and Dr. S. Soma Rao.
+                </p>
+                <p className="text-gray-600 mb-8">
+                  We provide comprehensive care for all anorectal conditions with
+                  personalized treatment plans in a comfortable environment.
+                </p>
+                <div className="flex flex-wrap gap-4">
+                  <Button
+                    onClick={() => navigate("/services")}
+                    className="bg-green-600 hover:bg-green-700"
+                  >
+                    Our Services
+                  </Button>
+                  <Button
+                    variant="outline"
+                    className="border-green-600 text-green-600 hover:bg-green-50"
+                    onClick={() => navigate("/contact")}
+                  >
+                    Book Appointment
+                  </Button>
+                </div>
+              </div>
+              <div className="md:w-1/2 mt-8 md:mt-0">
+                <img
+                  src="/lovable-uploads/033a2ecf-e6db-41b0-b421-fcfe6a03921c.png"
+                  alt="Doctor and patient"
+                  className="rounded-lg shadow-lg w-full"
+                />
+              </div>
             </div>
           </div>
-          
-          <div className="animate-fade-in delay-400">
-            <Button asChild className="mr-4 bg-ayush-600 hover:bg-ayush-700">
-              <Link to="/contact">Book Appointment</Link>
+        </section>
+
+        {/* Services Overview */}
+        <section className="py-12 bg-white">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">
+              Our Specialized Services
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {/* Service 1 */}
+              <div className="bg-green-50 rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow">
+                <div className="mb-4 text-green-600">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-12 w-12"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                  Hemorrhoid Treatment
+                </h3>
+                <p className="text-gray-600">
+                  Advanced non-surgical and surgical treatments for hemorrhoids,
+                  providing relief with minimal recovery time.
+                </p>
+                <Link
+                  to="/services"
+                  className="mt-4 inline-block text-green-600 hover:text-green-700"
+                >
+                  Learn more →
+                </Link>
+              </div>
+
+              {/* Service 2 */}
+              <div className="bg-green-50 rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow">
+                <div className="mb-4 text-green-600">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-12 w-12"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                  Fistula Management
+                </h3>
+                <p className="text-gray-600">
+                  Comprehensive diagnosis and treatment plans for anal fistulas,
+                  with both conservative and surgical options.
+                </p>
+                <Link
+                  to="/services"
+                  className="mt-4 inline-block text-green-600 hover:text-green-700"
+                >
+                  Learn more →
+                </Link>
+              </div>
+
+              {/* Service 3 */}
+              <div className="bg-green-50 rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow">
+                <div className="mb-4 text-green-600">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-12 w-12"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                  Colorectal Consultations
+                </h3>
+                <p className="text-gray-600">
+                  Expert consultations for colorectal health concerns, including
+                  preventive screenings and personalized care plans.
+                </p>
+                <Link
+                  to="/services"
+                  className="mt-4 inline-block text-green-600 hover:text-green-700"
+                >
+                  Learn more →
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Why Choose Us Section */}
+        <WhyChooseUs />
+
+        {/* Staff Section */}
+        <section className="py-12 bg-gray-50">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">
+              Our Expert Doctors
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              {/* Doctor 1 */}
+              <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+                <div className="flex flex-col md:flex-row">
+                  <div className="md:w-1/3">
+                    <img
+                      src="/lovable-uploads/16d848b0-a7b1-44d4-a693-ffb75dac2c85.png"
+                      alt="Dr. S.K. Rao"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="md:w-2/3 p-6">
+                    <h3 className="text-xl font-semibold text-gray-800">
+                      Dr. S.K. Rao
+                    </h3>
+                    <p className="text-green-600 mb-2">Senior Consultant</p>
+                    <p className="text-gray-600 mb-4">
+                      S.C.U.M(Cal)
+                    </p>
+                    <p className="text-gray-600">
+                      Specializes in advanced techniques for anorectal surgeries
+                      with over 20 years of experience.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Doctor 2 */}
+              <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+                <div className="flex flex-col md:flex-row">
+                  <div className="md:w-1/3">
+                    <img
+                      src="/lovable-uploads/18c77be6-866e-4a3d-b716-9582b0926a91.png"
+                      alt="Dr. S. Soma Rao"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="md:w-2/3 p-6">
+                    <h3 className="text-xl font-semibold text-gray-800">
+                      Dr. S. Soma Rao
+                    </h3>
+                    <p className="text-green-600 mb-2">
+                      Chief Surgeon & Director
+                    </p>
+                    <p className="text-gray-600 mb-4">
+                      M.S., M.Ch. (Gastroenterology)
+                    </p>
+                    <p className="text-gray-600">
+                      Expert in minimally invasive procedures and comprehensive
+                      management of anorectal conditions.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="text-center mt-8">
+              <Button
+                variant="outline"
+                className="border-green-600 text-green-600 hover:bg-green-50"
+                onClick={() => navigate("/about")}
+              >
+                Meet Our Complete Team
+              </Button>
+            </div>
+          </div>
+        </section>
+
+        {/* Testimonials */}
+        <section className="py-12 bg-white">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">
+              Patient Testimonials
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {/* Testimonial 1 */}
+              <div className="bg-green-50 p-6 rounded-lg shadow-md">
+                <div className="flex items-center mb-4">
+                  <div className="h-12 w-12 rounded-full bg-green-200 flex items-center justify-center text-green-600 text-xl font-bold">
+                    RP
+                  </div>
+                  <div className="ml-4">
+                    <h4 className="font-semibold">Rajesh Patel</h4>
+                    <div className="flex text-yellow-400">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-5 w-5"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-5 w-5"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-5 w-5"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-5 w-5"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-5 w-5"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <p className="text-gray-600">
+                  "I had been suffering from hemorrhoids for years. The team at
+                  AYUSH Health Care provided such professional and compassionate
+                  care. After my treatment, I'm finally pain-free!"
+                </p>
+              </div>
+
+              {/* Testimonial 2 */}
+              <div className="bg-green-50 p-6 rounded-lg shadow-md">
+                <div className="flex items-center mb-4">
+                  <div className="h-12 w-12 rounded-full bg-green-200 flex items-center justify-center text-green-600 text-xl font-bold">
+                    SJ
+                  </div>
+                  <div className="ml-4">
+                    <h4 className="font-semibold">Sunita Joshi</h4>
+                    <div className="flex text-yellow-400">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-5 w-5"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-5 w-5"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-5 w-5"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-5 w-5"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-5 w-5"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <p className="text-gray-600">
+                  "The doctors explained my condition so clearly and made me feel
+                  comfortable throughout my treatment. The minimally invasive
+                  approach they used meant I could return to work quickly."
+                </p>
+              </div>
+
+              {/* Testimonial 3 */}
+              <div className="bg-green-50 p-6 rounded-lg shadow-md">
+                <div className="flex items-center mb-4">
+                  <div className="h-12 w-12 rounded-full bg-green-200 flex items-center justify-center text-green-600 text-xl font-bold">
+                    AK
+                  </div>
+                  <div className="ml-4">
+                    <h4 className="font-semibold">Anil Kumar</h4>
+                    <div className="flex text-yellow-400">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-5 w-5"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-5 w-5"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-5 w-5"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-5 w-5"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-5 w-5"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <p className="text-gray-600">
+                  "I was anxious about my fistula surgery, but Dr. Soma Rao and
+                  his team were exceptional. They provided detailed information
+                  and the follow-up care was outstanding."
+                </p>
+              </div>
+            </div>
+
+            <div className="text-center mt-8">
+              <Button
+                variant="outline"
+                className="border-green-600 text-green-600 hover:bg-green-50"
+                onClick={() => navigate("/testimonials")}
+              >
+                Read More Testimonials
+              </Button>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="py-16 bg-green-600 text-white">
+          <div className="container mx-auto px-4 text-center">
+            <h2 className="text-3xl font-bold mb-4">
+              Experience Expert Anorectal Care
+            </h2>
+            <p className="text-xl mb-8 max-w-3xl mx-auto">
+              Don't let anorectal conditions affect your quality of life. Our
+              specialized team is here to provide effective, compassionate care.
+            </p>
+            <Button
+              onClick={() => navigate("/contact")}
+              className="bg-white text-green-600 hover:bg-gray-100"
+            >
+              Book Your Consultation Today
             </Button>
-            <Button asChild variant="outline" className="border-ayush-600 text-ayush-600 hover:bg-ayush-50">
-              <Link to="/services">Our Services</Link>
-            </Button>
           </div>
-        </div>
-      </section>
-
-      {/* About Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-            <div>
-              <SectionHeading
-                title="About AYUSH Health Care"
-                subtitle="Trusted expert care for anorectal conditions"
-              />
-              <p className="text-gray-600 mb-6">
-                At AYUSH Health Care, we provide comprehensive, compassionate care for all anorectal conditions.
-                With over 20 years of experience and more than 50,000 successfully treated patients,
-                our center combines traditional Ayurvedic methods with modern medical technology.
-              </p>
-              <Button asChild className="bg-ayush-600 hover:bg-ayush-700">
-                <Link to="/about">Learn More About Us</Link>
-              </Button>
-            </div>
-            <div className="rounded-xl overflow-hidden shadow-lg">
-              <img
-                src="/lovable-uploads/033a2ecf-e6db-41b0-b421-fcfe6a03921c.png"
-                alt="AYUSH Health Care Facility"
-                className="w-full h-auto"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose Us Section */}
-      <WhyChooseUs />
-
-      {/* Staff/Doctor Section */}
-      <StaffSection />
-
-      {/* Testimonials Preview */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <SectionHeading
-            title="Patient Testimonials"
-            subtitle="See what our patients say about their experience"
-            centered
-          />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-            {/* Sample testimonial cards */}
-            <div className="bg-gray-50 p-6 rounded-xl shadow-sm">
-              <p className="text-gray-600 italic mb-4">"The treatment I received at AYUSH Health Care completely changed my life. After suffering for years, I'm finally pain-free."</p>
-              <p className="font-semibold text-gray-800">- Rahul M.</p>
-            </div>
-            <div className="bg-gray-50 p-6 rounded-xl shadow-sm">
-              <p className="text-gray-600 italic mb-4">"Dr. Soma Rao is extremely knowledgeable and caring. The Ayurvedic approach was gentler than I expected and very effective."</p>
-              <p className="font-semibold text-gray-800">- Priya K.</p>
-            </div>
-            <div className="bg-gray-50 p-6 rounded-xl shadow-sm">
-              <p className="text-gray-600 italic mb-4">"I was nervous about getting treatment, but the staff made me feel comfortable. The cashless facility was also very convenient."</p>
-              <p className="font-semibold text-gray-800">- Amit S.</p>
-            </div>
-          </div>
-          <div className="text-center mt-8">
-            <Button asChild variant="outline" className="border-ayush-600 text-ayush-600 hover:bg-ayush-50">
-              <Link to="/testimonials">View All Testimonials</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Services Preview */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <SectionHeading
-            title="Our Services"
-            subtitle="Comprehensive care for all anorectal conditions"
-            centered
-          />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
-            <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all">
-              <h3 className="text-xl font-bold mb-3 text-ayush-600">Piles Treatment</h3>
-              <p className="text-gray-600 mb-4">Advanced non-surgical and minimally invasive treatments for hemorrhoids</p>
-              <Button asChild variant="outline" className="w-full border-ayush-600 text-ayush-600 hover:bg-ayush-50">
-                <Link to="/services">Learn More</Link>
-              </Button>
-            </div>
-            <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all">
-              <h3 className="text-xl font-bold mb-3 text-ayush-600">Fistula Treatment</h3>
-              <p className="text-gray-600 mb-4">Specialized Ksharsutra therapy and other effective approaches</p>
-              <Button asChild variant="outline" className="w-full border-ayush-600 text-ayush-600 hover:bg-ayush-50">
-                <Link to="/services">Learn More</Link>
-              </Button>
-            </div>
-            <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all">
-              <h3 className="text-xl font-bold mb-3 text-ayush-600">Consultation</h3>
-              <p className="text-gray-600 mb-4">Comprehensive evaluation and personalized treatment plans</p>
-              <Button asChild variant="outline" className="w-full border-ayush-600 text-ayush-600 hover:bg-ayush-50">
-                <Link to="/services">Learn More</Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-ayush-700 to-herb-700 text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Experience Expert Care?</h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">Schedule your appointment today and take the first step towards relief and recovery.</p>
-          <Button asChild size="lg" className="bg-white text-ayush-700 hover:bg-gray-100">
-            <Link to="/contact">Book Your Appointment</Link>
-          </Button>
-        </div>
-      </section>
-
-      {/* Why Us Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <SectionHeading
-            title="Why Us?"
-            subtitle="Experience Excellence in Healthcare"
-            centered
-          />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-            <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all">
-              <h3 className="text-xl font-bold mb-3 text-ayush-600">Expert Care Team</h3>
-              <p className="text-gray-600">Led by Dr. S. Soma Rao with over 20 years of specialized experience in treating anorectal conditions.</p>
-            </div>
-            <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all">
-              <h3 className="text-xl font-bold mb-3 text-ayush-600">Advanced Technology</h3>
-              <p className="text-gray-600">State-of-the-art medical facilities combined with traditional Ayurvedic wisdom.</p>
-            </div>
-            <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all">
-              <h3 className="text-xl font-bold mb-3 text-ayush-600">Patient-Centric Approach</h3>
-              <p className="text-gray-600">Personalized treatment plans tailored to your specific condition and needs.</p>
-            </div>
-          </div>
-        </div>
-      </section>
+        </section>
+      </main>
     </div>
   );
 };
 
 export default Home;
+
