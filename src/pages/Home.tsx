@@ -129,7 +129,7 @@ const Home: React.FC = () => {
                     <p className="text-gray-600 mb-4">
                       S.C.U.M(Cal)
                     </p>
-                    <p className="text-gray-600 text-center">Specializes in advanced techniques and Consultancy   for anorectal surgeries with over 20 years of experience.</p>
+                    <p className="text-gray-600 text-center">Specializes in advanced techniques and Consultancy   for anorectal surgeries with over 45+ years of experience.</p>
                   </div>
                 </div>
               </div>
