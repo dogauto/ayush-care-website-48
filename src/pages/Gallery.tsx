@@ -61,24 +61,24 @@ const treatmentFacilityImages = [
     alt: "Treatment room with sliding glass partitions and medical examination table"
   },
   {
-    src: "/placeholder.svg", 
-    alt: "Treatment Room 2"
+    src: "/lovable-uploads/c79f8469-ae90-463e-aa2b-763eed7257c2.png",
+    alt: "Treatment room with medical bed, privacy curtain and staircase"
   },
   {
-    src: "/placeholder.svg", 
-    alt: "Treatment Room 3"
+    src: "/lovable-uploads/c43043ab-9bdb-411c-9694-9bb1552a99db.png",
+    alt: "Treatment area with privacy screens and examination beds"
   },
   {
-    src: "/placeholder.svg", 
-    alt: "Treatment Room 4"
+    src: "/lovable-uploads/3c09d40b-15d6-461c-a36f-3b26131d5a87.png",
+    alt: "Inpatient care facility with multiple beds and privacy screens"
   },
   {
-    src: "/placeholder.svg", 
-    alt: "Treatment Room 5"
+    src: "/lovable-uploads/54428381-4ff3-4ef4-a71b-5a32b66f903d.png",
+    alt: "Recovery room with patients resting on medical beds"
   },
   {
-    src: "/placeholder.svg", 
-    alt: "Treatment Room 6"
+    src: "/lovable-uploads/aa89f396-6203-43e8-b3a0-d62d80578c61.png",
+    alt: "Treatment room with examination bed and privacy screen"
   }
 ];
 
