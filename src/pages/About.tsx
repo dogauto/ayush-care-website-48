@@ -89,12 +89,7 @@ const About = () => {
                       Dr. S.K. Rao
                     </h3>
                     <p className="mt-2 text-gray-600">S.C.U.M(Cal)</p>
-                    <p className="mt-4 text-gray-600">
-                      Dr. S.K. Rao has over 20 years of experience specializing
-                      in anorectal surgeries and treatment of complex colorectal
-                      conditions. He has pioneered several minimally invasive
-                      techniques that have benefited thousands of patients.
-                    </p>
+                    <p className="mt-4 text-gray-600">Dr. S.K. Rao has over 45+ years of experience specializing in anorectal surgeries and treatment of complex colorectal conditions. He has pioneered several minimally invasive techniques that have benefited thousands of patients.</p>
                     <p className="mt-2 text-gray-600">
                       His compassionate approach and dedication to patient
                       education have made him a trusted name in the field of
