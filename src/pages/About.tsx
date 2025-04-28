@@ -1,11 +1,8 @@
-
 import React from "react";
 import { Button } from "@/components/ui/button";
 import StaffMembers from "@/components/StaffMembers";
-
 const About = () => {
-  return (
-    <div className="min-h-screen">
+  return <div className="min-h-screen">
       <div className="bg-green-50 py-12">
         <div className="container mx-auto px-4">
           <h1 className="text-3xl md:text-4xl font-bold text-green-800 mb-6 text-center">
@@ -14,11 +11,7 @@ const About = () => {
           <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-md overflow-hidden">
             <div className="md:flex">
               <div className="md:flex-shrink-0">
-                <img
-                  className="h-48 w-full object-cover md:w-48"
-                  src="/lovable-uploads/033a2ecf-e6db-41b0-b421-fcfe6a03921c.png"
-                  alt="AYUSH Health Care"
-                />
+                <img className="h-48 w-full object-cover md:w-48" src="/lovable-uploads/033a2ecf-e6db-41b0-b421-fcfe6a03921c.png" alt="AYUSH Health Care" />
               </div>
               <div className="p-8">
                 <div className="uppercase tracking-wide text-sm text-green-600 font-semibold">
@@ -86,11 +79,7 @@ const About = () => {
               <div className="bg-white rounded-lg shadow-lg overflow-hidden">
                 <div className="md:flex">
                   <div className="md:w-2/5">
-                    <img
-                      className="h-64 w-full object-cover md:h-full"
-                      src="/lovable-uploads/16d848b0-a7b1-44d4-a693-ffb75dac2c85.png"
-                      alt="Dr. S.K. Rao"
-                    />
+                    <img className="h-64 w-full object-cover md:h-full" alt="Dr. S.K. Rao" src="/lovable-uploads/66d66b5d-a24b-4a33-9fb4-f68e39715062.png" />
                   </div>
                   <div className="p-8 md:w-3/5">
                     <div className="uppercase tracking-wide text-sm text-green-600 font-semibold">
@@ -119,11 +108,7 @@ const About = () => {
               <div className="bg-white rounded-lg shadow-lg overflow-hidden">
                 <div className="md:flex">
                   <div className="md:w-2/5">
-                    <img
-                      className="h-64 w-full object-cover md:h-full"
-                      src="/lovable-uploads/18c77be6-866e-4a3d-b716-9582b0926a91.png"
-                      alt="Dr. S. Soma Rao"
-                    />
+                    <img className="h-64 w-full object-cover md:h-full" src="/lovable-uploads/18c77be6-866e-4a3d-b716-9582b0926a91.png" alt="Dr. S. Soma Rao" />
                   </div>
                   <div className="p-8 md:w-3/5">
                     <div className="uppercase tracking-wide text-sm text-green-600 font-semibold">
@@ -167,11 +152,7 @@ const About = () => {
           </h2>
           <div className="grid md:grid-cols-2 gap-8">
             <div>
-              <img
-                className="rounded-lg shadow-md"
-                src="/lovable-uploads/033a2ecf-e6db-41b0-b421-fcfe6a03921c.png"
-                alt="AYUSH Health Care Facility"
-              />
+              <img className="rounded-lg shadow-md" src="/lovable-uploads/033a2ecf-e6db-41b0-b421-fcfe6a03921c.png" alt="AYUSH Health Care Facility" />
             </div>
             <div>
               <p className="text-gray-600 mb-4">
@@ -195,13 +176,10 @@ const About = () => {
                 <li>• Private consultation rooms</li>
                 <li>• Patient education center</li>
               </ul>
-              <Button
-                className="bg-green-600 hover:bg-green-700 text-white"
-                onClick={() => {
-                  window.scrollTo(0, 0);
-                  window.location.href = "/gallery";
-                }}
-              >
+              <Button className="bg-green-600 hover:bg-green-700 text-white" onClick={() => {
+              window.scrollTo(0, 0);
+              window.location.href = "/gallery";
+            }}>
                 View Our Gallery
               </Button>
             </div>
@@ -219,19 +197,14 @@ const About = () => {
             of experts is ready to provide you with personalized care and
             effective treatment options.
           </p>
-          <Button
-            className="bg-white text-green-600 hover:bg-gray-100"
-            onClick={() => {
-              window.scrollTo(0, 0);
-              window.location.href = "/contact";
-            }}
-          >
+          <Button className="bg-white text-green-600 hover:bg-gray-100" onClick={() => {
+          window.scrollTo(0, 0);
+          window.location.href = "/contact";
+        }}>
             Schedule Your Consultation Today
           </Button>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default About;
