@@ -1,10 +1,8 @@
 import { SectionHeading } from "@/components/ui/section-heading";
 import { CTAButton } from "@/components/ui/cta-button";
 import { Check, Phone } from "lucide-react";
-
 const Services = () => {
-  return (
-    <div>
+  return <div>
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-ayush-50 to-herb-50 py-16">
         <div className="container mx-auto px-4">
@@ -57,18 +55,10 @@ const Services = () => {
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-center gap-12">
             <div className="lg:w-1/2">
-              <img 
-                src="/lovable-uploads/49449a39-c5a9-4012-8208-e6065ecc117b.png"
-                alt="Medical illustration of Piles" 
-                className="rounded-xl shadow-md w-full h-auto object-cover"
-              />
+              <img alt="Medical illustration of Piles" className="rounded-xl shadow-md w-full h-auto object-cover" src="/lovable-uploads/c550f286-59e3-4a2c-a285-89de3aa3392c.jpg" />
             </div>
             <div className="lg:w-1/2">
-              <SectionHeading 
-                title="Piles (হেমোরয়ে��স)" 
-                subtitle="Effective, permanent relief from hemorrhoids"
-                centered={false}
-              />
+              <SectionHeading title="Piles (হেমোরয়ে��স)" subtitle="Effective, permanent relief from hemorrhoids" centered={false} />
               
               <h3 className="text-xl font-bold mb-3 text-gray-800">What are Piles?</h3>
               <p className="text-gray-700 mb-6">
@@ -120,11 +110,7 @@ const Services = () => {
                 </div>
               </div>
               
-              <CTAButton 
-                to="/contact" 
-                variant="primary" 
-                icon={<Phone size={18} />}
-              >
+              <CTAButton to="/contact" variant="primary" icon={<Phone size={18} />}>
                 Consult for Piles Treatment
               </CTAButton>
             </div>
@@ -137,18 +123,10 @@ const Services = () => {
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row-reverse items-center gap-12">
             <div className="lg:w-1/2">
-              <img 
-                src="/lovable-uploads/230315df-fc8d-448d-8a0b-008c20bf55e0.png"
-                alt="Chronic Anal Fissure Medical Illustration" 
-                className="rounded-xl shadow-md w-full h-auto object-cover"
-              />
+              <img src="/lovable-uploads/230315df-fc8d-448d-8a0b-008c20bf55e0.png" alt="Chronic Anal Fissure Medical Illustration" className="rounded-xl shadow-md w-full h-auto object-cover" />
             </div>
             <div className="lg:w-1/2">
-              <SectionHeading 
-                title="Fissure-in-Ano (পায়খানার কাটা)" 
-                subtitle="Permanent relief from painful anal fissures"
-                centered={false}
-              />
+              <SectionHeading title="Fissure-in-Ano (পায়খানার কাটা)" subtitle="Permanent relief from painful anal fissures" centered={false} />
               
               <h3 className="text-xl font-bold mb-3 text-gray-800">What is an Anal Fissure?</h3>
               <p className="text-gray-700 mb-6">
@@ -200,11 +178,7 @@ const Services = () => {
                 </div>
               </div>
               
-              <CTAButton 
-                to="/contact" 
-                variant="primary" 
-                icon={<Phone size={18} />}
-              >
+              <CTAButton to="/contact" variant="primary" icon={<Phone size={18} />}>
                 Consult for Fissure Treatment
               </CTAButton>
             </div>
@@ -217,18 +191,10 @@ const Services = () => {
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-center gap-12">
             <div className="lg:w-1/2">
-              <img 
-                src="/lovable-uploads/f0cf37a4-a252-4119-bc5a-24df8d6f75b3.png"
-                alt="Fistula Treatment" 
-                className="rounded-xl shadow-md w-full h-auto object-cover"
-              />
+              <img src="/lovable-uploads/f0cf37a4-a252-4119-bc5a-24df8d6f75b3.png" alt="Fistula Treatment" className="rounded-xl shadow-md w-full h-auto object-cover" />
             </div>
             <div className="lg:w-1/2">
-              <SectionHeading 
-                title="Fistula-in-Ano (ভগন্দর)" 
-                subtitle="Advanced Ksharsutra therapy for complete healing"
-                centered={false}
-              />
+              <SectionHeading title="Fistula-in-Ano (ভগন্দর)" subtitle="Advanced Ksharsutra therapy for complete healing" centered={false} />
               
               <h3 className="text-xl font-bold mb-3 text-gray-800">What is an Anal Fistula?</h3>
               <p className="text-gray-700 mb-6">
@@ -280,11 +246,7 @@ const Services = () => {
                 </div>
               </div>
               
-              <CTAButton 
-                to="/contact" 
-                variant="primary" 
-                icon={<Phone size={18} />}
-              >
+              <CTAButton to="/contact" variant="primary" icon={<Phone size={18} />}>
                 Consult for Fistula Treatment
               </CTAButton>
             </div>
@@ -297,18 +259,10 @@ const Services = () => {
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row-reverse items-center gap-12">
             <div className="lg:w-1/2">
-              <img 
-                src="/lovable-uploads/e53c4a44-cdf6-49cd-b0e1-cc6f5c272fea.png"
-                alt="Rectal Prolapse Treatment" 
-                className="rounded-xl shadow-md w-full h-auto object-cover"
-              />
+              <img src="/lovable-uploads/e53c4a44-cdf6-49cd-b0e1-cc6f5c272fea.png" alt="Rectal Prolapse Treatment" className="rounded-xl shadow-md w-full h-auto object-cover" />
             </div>
             <div className="lg:w-1/2">
-              <SectionHeading 
-                title="Rectal Prolapse (মলদ্বারের পতন)" 
-                subtitle="Effective treatment for rectal tissue protrusion"
-                centered={false}
-              />
+              <SectionHeading title="Rectal Prolapse (মলদ্বারের পতন)" subtitle="Effective treatment for rectal tissue protrusion" centered={false} />
               
               <h3 className="text-xl font-bold mb-3 text-gray-800">What is Rectal Prolapse?</h3>
               <p className="text-gray-700 mb-6">
@@ -360,11 +314,7 @@ const Services = () => {
                 </div>
               </div>
               
-              <CTAButton 
-                to="/contact" 
-                variant="primary" 
-                icon={<Phone size={18} />}
-              >
+              <CTAButton to="/contact" variant="primary" icon={<Phone size={18} />}>
                 Consult for Prolapse Treatment
               </CTAButton>
             </div>
@@ -375,11 +325,7 @@ const Services = () => {
       {/* Benefits Section */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
-          <SectionHeading 
-            title="Benefits of Our Treatment Approach" 
-            subtitle="Why patients choose AYUSH HEALTH CARE for anorectal treatments"
-            centered={true}
-          />
+          <SectionHeading title="Benefits of Our Treatment Approach" subtitle="Why patients choose AYUSH HEALTH CARE for anorectal treatments" centered={true} />
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all text-center">
@@ -440,19 +386,11 @@ const Services = () => {
           <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
             At AYUSH HEALTH CARE, we understand the sensitive nature of anorectal conditions. We assure you of complete privacy, compassionate care, and long-term support throughout your treatment journey.
           </p>
-          <CTAButton 
-            to="/contact" 
-            variant="secondary" 
-            size="lg" 
-            icon={<Phone size={20} />}
-            className="bg-white text-ayush-700"
-          >
+          <CTAButton to="/contact" variant="secondary" size="lg" icon={<Phone size={20} />} className="bg-white text-ayush-700">
             Book Your Consultation Today
           </CTAButton>
         </div>
       </section>
-    </div>
-  );
+    </div>;
 };
-
 export default Services;
