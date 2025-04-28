@@ -191,7 +191,7 @@ const Services = () => {
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-center gap-12">
             <div className="lg:w-1/2">
-              <img src="/lovable-uploads/f0cf37a4-a252-4119-bc5a-24df8d6f75b3.png" alt="Fistula Treatment" className="rounded-xl shadow-md w-full h-auto object-cover" />
+              <img alt="Fistula Treatment" className="rounded-xl shadow-md w-full h-auto object-cover" src="/lovable-uploads/b5f2a75c-7c12-453a-906b-8956826eb268.jpg" />
             </div>
             <div className="lg:w-1/2">
               <SectionHeading title="Fistula-in-Ano (ভগন্দর)" subtitle="Advanced Ksharsutra therapy for complete healing" centered={false} />
