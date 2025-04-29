@@ -15,6 +15,7 @@ import Contact from "./pages/Contact";
 import Gallery from "./pages/Gallery";
 import MyAppointments from "./pages/MyAppointments";
 import NotFound from "./pages/NotFound";
+import PilesDetail from "./pages/piles/PilesDetail";
 
 const queryClient = new QueryClient();
 
@@ -35,6 +36,7 @@ const App = () => {
             <Route path="/contact" element={<Layout><Contact /></Layout>} />
             <Route path="/gallery" element={<Layout><Gallery /></Layout>} />
             <Route path="/my-appointments" element={<Layout><MyAppointments /></Layout>} />
+            <Route path="/piles/:type" element={<Layout><PilesDetail /></Layout>} />
             <Route path="*" element={<Layout><NotFound /></Layout>} />
           </Routes>
         </TooltipProvider>

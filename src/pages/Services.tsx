@@ -1,9 +1,10 @@
 
 import { SectionHeading } from "@/components/ui/section-heading";
 import { CTAButton } from "@/components/ui/cta-button";
-import { Check, Phone, ChevronRight } from "lucide-react";
+import { Check, Phone, ChevronRight, ArrowRight } from "lucide-react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
+import { Link } from "react-router-dom";
 
 const Services = () => {
   return <div>
@@ -89,11 +90,16 @@ const Services = () => {
                       <CardContent className="p-4">
                         <h4 className="font-bold text-gray-800 mb-2 flex items-center">
                           <ChevronRight size={18} className="text-herb-600 mr-1" />
-                          Internal Piles
+                          <Link to="/piles/internal" className="hover:text-herb-600 transition-colors">
+                            Internal Piles
+                          </Link>
                         </h4>
                         <p className="text-gray-600 text-sm">
                           Located inside the rectum and usually painless but may cause bleeding.
                         </p>
+                        <Link to="/piles/internal" className="text-herb-600 text-sm mt-2 flex items-center hover:underline">
+                          Learn more <ArrowRight size={14} className="ml-1" />
+                        </Link>
                       </CardContent>
                     </Card>
                     
@@ -101,11 +107,16 @@ const Services = () => {
                       <CardContent className="p-4">
                         <h4 className="font-bold text-gray-800 mb-2 flex items-center">
                           <ChevronRight size={18} className="text-herb-600 mr-1" />
-                          External Piles
+                          <Link to="/piles/external" className="hover:text-herb-600 transition-colors">
+                            External Piles
+                          </Link>
                         </h4>
                         <p className="text-gray-600 text-sm">
                           Develop under the skin around the anus, often causing pain and discomfort.
                         </p>
+                        <Link to="/piles/external" className="text-herb-600 text-sm mt-2 flex items-center hover:underline">
+                          Learn more <ArrowRight size={14} className="ml-1" />
+                        </Link>
                       </CardContent>
                     </Card>
                     
@@ -113,11 +124,16 @@ const Services = () => {
                       <CardContent className="p-4">
                         <h4 className="font-bold text-gray-800 mb-2 flex items-center">
                           <ChevronRight size={18} className="text-herb-600 mr-1" />
-                          Bleeding Piles
+                          <Link to="/piles/bleeding" className="hover:text-herb-600 transition-colors">
+                            Bleeding Piles
+                          </Link>
                         </h4>
                         <p className="text-gray-600 text-sm">
                           Characterized by bright red blood during bowel movements, requiring prompt treatment.
                         </p>
+                        <Link to="/piles/bleeding" className="text-herb-600 text-sm mt-2 flex items-center hover:underline">
+                          Learn more <ArrowRight size={14} className="ml-1" />
+                        </Link>
                       </CardContent>
                     </Card>
                     
@@ -125,11 +141,16 @@ const Services = () => {
                       <CardContent className="p-4">
                         <h4 className="font-bold text-gray-800 mb-2 flex items-center">
                           <ChevronRight size={18} className="text-herb-600 mr-1" />
-                          Blind Piles
+                          <Link to="/piles/blind" className="hover:text-herb-600 transition-colors">
+                            Blind Piles
+                          </Link>
                         </h4>
                         <p className="text-gray-600 text-sm">
                           Non-bleeding hemorrhoids that cause discomfort and pain without visible bleeding.
                         </p>
+                        <Link to="/piles/blind" className="text-herb-600 text-sm mt-2 flex items-center hover:underline">
+                          Learn more <ArrowRight size={14} className="ml-1" />
+                        </Link>
                       </CardContent>
                     </Card>
                     
@@ -137,11 +158,16 @@ const Services = () => {
                       <CardContent className="p-4">
                         <h4 className="font-bold text-gray-800 mb-2 flex items-center">
                           <ChevronRight size={18} className="text-herb-600 mr-1" />
-                          Thrombosed Piles
+                          <Link to="/piles/thrombosed" className="hover:text-herb-600 transition-colors">
+                            Thrombosed Piles
+                          </Link>
                         </h4>
                         <p className="text-gray-600 text-sm">
                           Blood clots form within external hemorrhoids, causing severe pain and inflammation.
                         </p>
+                        <Link to="/piles/thrombosed" className="text-herb-600 text-sm mt-2 flex items-center hover:underline">
+                          Learn more <ArrowRight size={14} className="ml-1" />
+                        </Link>
                       </CardContent>
                     </Card>
                     
@@ -149,11 +175,16 @@ const Services = () => {
                       <CardContent className="p-4">
                         <h4 className="font-bold text-gray-800 mb-2 flex items-center">
                           <ChevronRight size={18} className="text-herb-600 mr-1" />
-                          Prolapsed Piles
+                          <Link to="/piles/prolapsed" className="hover:text-herb-600 transition-colors">
+                            Prolapsed Piles
+                          </Link>
                         </h4>
                         <p className="text-gray-600 text-sm">
                           Internal hemorrhoids that protrude outside the anal opening, causing discomfort.
                         </p>
+                        <Link to="/piles/prolapsed" className="text-herb-600 text-sm mt-2 flex items-center hover:underline">
+                          Learn more <ArrowRight size={14} className="ml-1" />
+                        </Link>
                       </CardContent>
                     </Card>
                   </div>
@@ -198,40 +229,82 @@ const Services = () => {
                 </summary>
                 <div className="pl-4 pt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <h5 className="font-semibold text-gray-800 mb-1">Aggregate Piles</h5>
-                    <p className="text-gray-600 text-sm mb-3">
+                    <h5 className="font-semibold text-gray-800 mb-1 flex items-center">
+                      <Link to="/piles/aggregate" className="hover:text-herb-600 transition-colors">
+                        Aggregate Piles
+                      </Link>
+                    </h5>
+                    <p className="text-gray-600 text-sm mb-2">
                       A collection of multiple hemorrhoids that have developed simultaneously, requiring comprehensive treatment.
                     </p>
+                    <Link to="/piles/aggregate" className="text-herb-600 text-xs flex items-center hover:underline">
+                      Learn more <ArrowRight size={12} className="ml-1" />
+                    </Link>
                   </div>
                   <div>
-                    <h5 className="font-semibold text-gray-800 mb-1">End Bearing Piles</h5>
-                    <p className="text-gray-600 text-sm mb-3">
+                    <h5 className="font-semibold text-gray-800 mb-1 flex items-center">
+                      <Link to="/piles/end-bearing" className="hover:text-herb-600 transition-colors">
+                        End Bearing Piles
+                      </Link>
+                    </h5>
+                    <p className="text-gray-600 text-sm mb-2">
                       Hemorrhoids located at the terminal end of the anal canal, often causing significant discomfort during bowel movements.
                     </p>
+                    <Link to="/piles/end-bearing" className="text-herb-600 text-xs flex items-center hover:underline">
+                      Learn more <ArrowRight size={12} className="ml-1" />
+                    </Link>
                   </div>
                   <div>
-                    <h5 className="font-semibold text-gray-800 mb-1">Steel Piles</h5>
-                    <p className="text-gray-600 text-sm mb-3">
+                    <h5 className="font-semibold text-gray-800 mb-1 flex items-center">
+                      <Link to="/piles/steel" className="hover:text-herb-600 transition-colors">
+                        Steel Piles
+                      </Link>
+                    </h5>
+                    <p className="text-gray-600 text-sm mb-2">
                       A colloquial term for very firm or hardened hemorrhoids that are particularly resistant to conventional treatments.
                     </p>
+                    <Link to="/piles/steel" className="text-herb-600 text-xs flex items-center hover:underline">
+                      Learn more <ArrowRight size={12} className="ml-1" />
+                    </Link>
                   </div>
                   <div>
-                    <h5 className="font-semibold text-gray-800 mb-1">Friction Pile</h5>
-                    <p className="text-gray-600 text-sm mb-3">
+                    <h5 className="font-semibold text-gray-800 mb-1 flex items-center">
+                      <Link to="/piles/friction" className="hover:text-herb-600 transition-colors">
+                        Friction Pile
+                      </Link>
+                    </h5>
+                    <p className="text-gray-600 text-sm mb-2">
                       Hemorrhoids that become irritated due to friction during movement or physical activity, common in athletes.
                     </p>
+                    <Link to="/piles/friction" className="text-herb-600 text-xs flex items-center hover:underline">
+                      Learn more <ArrowRight size={12} className="ml-1" />
+                    </Link>
                   </div>
                   <div>
-                    <h5 className="font-semibold text-gray-800 mb-1">Sheet Piles</h5>
-                    <p className="text-gray-600 text-sm mb-3">
+                    <h5 className="font-semibold text-gray-800 mb-1 flex items-center">
+                      <Link to="/piles/sheet" className="hover:text-herb-600 transition-colors">
+                        Sheet Piles
+                      </Link>
+                    </h5>
+                    <p className="text-gray-600 text-sm mb-2">
                       A term for hemorrhoids that have spread in a sheet-like pattern around the anal area, requiring specialized treatment.
                     </p>
+                    <Link to="/piles/sheet" className="text-herb-600 text-xs flex items-center hover:underline">
+                      Learn more <ArrowRight size={12} className="ml-1" />
+                    </Link>
                   </div>
                   <div>
-                    <h5 className="font-semibold text-gray-800 mb-1">Bored Piles</h5>
-                    <p className="text-gray-600 text-sm mb-3">
+                    <h5 className="font-semibold text-gray-800 mb-1 flex items-center">
+                      <Link to="/piles/bored" className="hover:text-herb-600 transition-colors">
+                        Bored Piles
+                      </Link>
+                    </h5>
+                    <p className="text-gray-600 text-sm mb-2">
                       Internal hemorrhoids that have created deeper tissue damage, often requiring more intensive therapeutic approaches.
                     </p>
+                    <Link to="/piles/bored" className="text-herb-600 text-xs flex items-center hover:underline">
+                      Learn more <ArrowRight size={12} className="ml-1" />
+                    </Link>
                   </div>
                 </div>
               </details>
