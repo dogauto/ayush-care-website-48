@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Phone } from "lucide-react";
+import { Phone, Menu, X } from "lucide-react";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,46 +17,21 @@ const Header = () => {
           AYUSH <span className="text-herb-600">HEALTH CARE</span>
         </Link>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile Menu Button - Highlighted */}
         <div className="block md:hidden">
           <Button
-            variant="ghost"
+            variant="outline"
             size="icon"
             aria-label="Toggle Menu"
             onClick={toggleMenu}
+            className="relative bg-herb-50 border-herb-300 hover:bg-herb-100 hover:border-herb-400 animate-pulse duration-1000 shadow-md"
           >
             {isMenuOpen ? (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M18 6 6 18" />
-                <path d="m6 6 12 12" />
-              </svg>
+              <X className="h-5 w-5 text-herb-700" />
             ) : (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <line x1="4" x2="20" y1="12" y2="12" />
-                <line x1="4" x2="20" y1="6" y2="6" />
-                <line x1="4" x2="20" y1="18" y2="18" />
-              </svg>
+              <Menu className="h-5 w-5 text-herb-700" />
             )}
+            <span className="sr-only">Toggle Menu</span>
           </Button>
         </div>
 
