@@ -1,8 +1,7 @@
-
 import { useParams, Link } from "react-router-dom";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { CTAButton } from "@/components/ui/cta-button";
-import { Check, ArrowLeft, Phone, Laser, Info } from "lucide-react";
+import { Check, ArrowLeft, Phone, Info, ArrowRight, Zap } from "lucide-react";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { useToast } from "@/hooks/use-toast";
@@ -389,7 +388,7 @@ const PilesDetail = () => {
         "Anatomical factors that put pressure on the anal veins",
         "Occupations requiring long periods of sitting",
         "Genetic weakness in the veins of the anorectal area",
-        "Aging and natural weakening of supporting tissues",
+        "Aging and natural weakening of supportive tissues",
         "Pregnancy and childbirth",
         "Certain sports activities that increase intra-abdominal pressure"
       ],
@@ -570,8 +569,8 @@ const PilesDetail = () => {
         "Regular medical check-ups if you have a history of hemorrhoids",
         "Proper hydration to maintain soft stools",
         "Regular but gentle exercise to improve circulation",
-        "Avoiding prolonged sitting or standing",
-        "Prompt treatment of diarrhea or digestive conditions"
+        "Avoiding prolonged sitting that increases rectal pressure",
+        "Prompt treatment of constipation or digestive conditions"
       ],
       imagePath: "/lovable-uploads/b5f2a75c-7c12-453a-906b-8956826eb268.jpg",
       treatments: {
@@ -834,7 +833,7 @@ const PilesDetail = () => {
                   <TabsContent value="modern" className="pt-4">
                     <div className="bg-blue-50 p-4 rounded-lg mb-4">
                       <h4 className="font-semibold text-gray-800 mb-3 flex items-center">
-                        <Laser size={20} className="text-blue-600 mr-2" />
+                        <Zap size={20} className="text-blue-600 mr-2" />
                         Advanced Laser Treatment
                       </h4>
                       <p className="text-gray-700 mb-4">
