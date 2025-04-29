@@ -1,3 +1,4 @@
+
 import { useParams, Link } from "react-router-dom";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { CTAButton } from "@/components/ui/cta-button";
@@ -731,17 +732,21 @@ const PilesDetail = () => {
 
   return (
     <div className="bg-white">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-ayush-100 to-herb-100 py-16">
-        <div className="container mx-auto px-4">
-          <Link to="/services" className="inline-flex items-center text-herb-700 hover:text-herb-900 mb-8 transition-colors">
+      {/* Hero Section with Enhanced Background */}
+      <section className="bg-gradient-to-r from-ayush-100 via-herb-50 to-ayush-100 py-16 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/lovable-uploads/c550f286-59e3-4a2c-a285-89de3aa3392c.jpg')] opacity-5 bg-cover bg-center mix-blend-overlay"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-white/30"></div>
+        <div className="container mx-auto px-4 relative z-10">
+          <Link to="/services" className="inline-flex items-center text-herb-700 hover:text-herb-900 mb-8 transition-colors bg-white/70 px-4 py-2 rounded-full shadow-sm">
             <ArrowLeft size={16} className="mr-2" />
             Back to Services
           </Link>
           
           <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-3xl md:text-5xl font-bold mb-4 text-gray-800">{selectedPiles.name}</h1>
-            <p className="text-lg text-gray-700 mb-6 max-w-3xl mx-auto">
+            <span className="inline-block px-4 py-1 bg-herb-100 text-herb-800 rounded-full text-sm font-medium mb-3 shadow-sm">Specialized Treatment</span>
+            <h1 className="text-3xl md:text-5xl font-bold mb-4 text-gray-800 drop-shadow-sm">{selectedPiles.name}</h1>
+            <div className="w-24 h-1 bg-gradient-to-r from-ayush-500 to-herb-500 mx-auto mb-6 rounded-full"></div>
+            <p className="text-lg text-gray-700 mb-6 max-w-3xl mx-auto bg-white/70 px-6 py-3 rounded-lg shadow-sm">
               {selectedPiles.headline}
             </p>
           </div>
@@ -755,45 +760,53 @@ const PilesDetail = () => {
             {/* Main Content */}
             <div className="lg:w-2/3">
               <div className="prose prose-lg max-w-none mb-8">
-                <h2 className="text-2xl font-bold text-gray-800 mb-4">Understanding {selectedPiles.name}</h2>
-                <div className="mb-8">
+                <h2 className="text-2xl font-bold text-gray-800 mb-4 flex items-center">
+                  <span className="w-10 h-10 rounded-full bg-herb-100 flex items-center justify-center mr-3">
+                    <Info size={18} className="text-herb-700" />
+                  </span>
+                  Understanding {selectedPiles.name}
+                </h2>
+                <div className="mb-8 relative rounded-xl overflow-hidden shadow-lg">
                   <img 
                     src={selectedPiles.imagePath} 
                     alt={`Medical illustration of ${selectedPiles.name}`} 
-                    className="w-full h-auto object-cover rounded-lg shadow-md mb-4"
+                    className="w-full h-auto object-cover rounded-lg"
                   />
-                  <p className="text-gray-600 text-sm italic text-center">Medical illustration of {selectedPiles.name}</p>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                  <p className="text-white absolute bottom-0 left-0 right-0 p-4 text-sm italic text-center">Medical illustration of {selectedPiles.name}</p>
                 </div>
-                <p className="text-gray-700">{selectedPiles.description}</p>
+                <p className="text-gray-700 p-5 bg-gray-50 rounded-lg border-l-4 border-herb-400">{selectedPiles.description}</p>
               </div>
               
-              <div className="mb-10">
-                <h3 className="text-xl font-semibold text-gray-800 mb-4">Common Symptoms</h3>
-                <ul className="space-y-2">
+              <div className="mb-10 bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                  <span className="text-herb-600 mr-2">⚠️</span> Common Symptoms
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   {selectedPiles.symptoms.map((symptom, index) => (
-                    <li key={index} className="flex items-start">
+                    <div key={index} className="flex items-start bg-herb-50 p-3 rounded-lg transition-all hover:shadow-md">
                       <Check size={18} className="text-herb-600 mr-2 mt-1 flex-shrink-0" />
                       <span className="text-gray-700">{symptom}</span>
-                    </li>
+                    </div>
                   ))}
-                </ul>
+                </div>
               </div>
               
-              <div className="mb-10">
+              <div className="mb-10 bg-gradient-to-br from-ayush-50 to-ayush-100 rounded-xl p-6 shadow-sm">
                 <h3 className="text-xl font-semibold text-gray-800 mb-4">Causes</h3>
-                <ul className="space-y-2">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   {selectedPiles.causes.map((cause, index) => (
-                    <li key={index} className="flex items-start">
-                      <div className="w-5 h-5 rounded-full bg-ayush-100 text-ayush-700 flex items-center justify-center mr-2 mt-0.5 flex-shrink-0">
+                    <div key={index} className="flex items-start bg-white/80 p-3 rounded-lg transition-all hover:bg-white">
+                      <div className="w-6 h-6 rounded-full bg-ayush-200 text-ayush-700 flex items-center justify-center mr-2 mt-0.5 flex-shrink-0">
                         {index + 1}
                       </div>
                       <span className="text-gray-700">{cause}</span>
-                    </li>
+                    </div>
                   ))}
-                </ul>
+                </div>
               </div>
               
-              <Alert className="bg-herb-50 border-herb-200 mb-10">
+              <Alert className="bg-herb-50 border-herb-200 mb-10 shadow-sm">
                 <Info className="h-5 w-5 text-herb-600" />
                 <AlertTitle className="text-herb-800">Did you know?</AlertTitle>
                 <AlertDescription className="text-herb-700">
@@ -802,15 +815,15 @@ const PilesDetail = () => {
               </Alert>
               
               <div className="mb-10">
-                <h3 className="text-xl font-semibold text-gray-800 mb-4">Treatment Options</h3>
+                <h3 className="text-xl font-semibold text-gray-800 mb-4 border-b border-gray-200 pb-2">Treatment Options</h3>
                 <Tabs defaultValue="ayurvedic" className="w-full">
-                  <TabsList className="grid w-full grid-cols-3">
-                    <TabsTrigger value="ayurvedic">Ayurvedic Treatment</TabsTrigger>
-                    <TabsTrigger value="modern">Modern Techniques</TabsTrigger>
-                    <TabsTrigger value="lifestyle">Lifestyle Changes</TabsTrigger>
+                  <TabsList className="grid w-full grid-cols-3 mb-2 bg-gray-100 p-1 rounded-lg">
+                    <TabsTrigger value="ayurvedic" className="data-[state=active]:bg-ayush-100 data-[state=active]:text-ayush-800">Ayurvedic Treatment</TabsTrigger>
+                    <TabsTrigger value="modern" className="data-[state=active]:bg-blue-100 data-[state=active]:text-blue-800">Modern Techniques</TabsTrigger>
+                    <TabsTrigger value="lifestyle" className="data-[state=active]:bg-gray-200 data-[state=active]:text-gray-800">Lifestyle Changes</TabsTrigger>
                   </TabsList>
-                  <TabsContent value="ayurvedic" className="pt-4">
-                    <div className="bg-ayush-50 p-4 rounded-lg mb-4">
+                  <TabsContent value="ayurvedic" className="pt-4 bg-ayush-50 p-6 rounded-xl">
+                    <div className="bg-white p-4 rounded-lg mb-4 shadow-sm border-l-4 border-ayush-500">
                       <h4 className="font-semibold text-gray-800 mb-3 flex items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" className="text-ayush-600 mr-2">
                           <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -821,17 +834,19 @@ const PilesDetail = () => {
                         Our specialty Ksharsutra treatment is a time-tested Ayurvedic method that involves using a medicated thread to gradually cut through and heal the hemorrhoidal tissue. This technique has been refined over thousands of years and offers excellent results with minimal discomfort and faster recovery times.
                       </p>
                     </div>
-                    <ul className="space-y-3">
-                      {selectedPiles.treatments.ayurvedic.map((treatment, index) => (
-                        <li key={index} className="flex items-start">
-                          <Check size={18} className="text-herb-600 mr-2 mt-1 flex-shrink-0" />
-                          <span className="text-gray-700">{treatment}</span>
-                        </li>
-                      ))}
-                    </ul>
+                    <div className="bg-gradient-to-r from-ayush-50 to-ayush-100 p-4 rounded-lg">
+                      <ul className="space-y-3">
+                        {selectedPiles.treatments.ayurvedic.map((treatment, index) => (
+                          <li key={index} className="flex items-start bg-white/70 p-3 rounded-lg transition-transform hover:translate-x-1">
+                            <Check size={18} className="text-herb-600 mr-2 mt-1 flex-shrink-0" />
+                            <span className="text-gray-700">{treatment}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </TabsContent>
-                  <TabsContent value="modern" className="pt-4">
-                    <div className="bg-blue-50 p-4 rounded-lg mb-4">
+                  <TabsContent value="modern" className="pt-4 bg-blue-50 p-6 rounded-xl">
+                    <div className="bg-white p-4 rounded-lg mb-4 shadow-sm border-l-4 border-blue-500">
                       <h4 className="font-semibold text-gray-800 mb-3 flex items-center">
                         <Zap size={20} className="text-blue-600 mr-2" />
                         Advanced Laser Treatment
@@ -840,37 +855,48 @@ const PilesDetail = () => {
                         Our state-of-the-art laser hemorrhoid treatment offers precision targeting of hemorrhoids while preserving surrounding healthy tissue. This advanced technique allows for faster healing, minimal discomfort, and shorter recovery times compared to traditional surgical methods.
                       </p>
                     </div>
-                    <ul className="space-y-3">
-                      {selectedPiles.treatments.modern.map((treatment, index) => (
-                        <li key={index} className="flex items-start">
-                          <Check size={18} className="text-blue-600 mr-2 mt-1 flex-shrink-0" />
-                          <span className="text-gray-700">{treatment}</span>
-                        </li>
-                      ))}
-                    </ul>
+                    <div className="bg-gradient-to-r from-blue-50 to-blue-100 p-4 rounded-lg">
+                      <ul className="space-y-3">
+                        {selectedPiles.treatments.modern.map((treatment, index) => (
+                          <li key={index} className="flex items-start bg-white/70 p-3 rounded-lg transition-transform hover:translate-x-1">
+                            <Check size={18} className="text-blue-600 mr-2 mt-1 flex-shrink-0" />
+                            <span className="text-gray-700">{treatment}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </TabsContent>
-                  <TabsContent value="lifestyle" className="pt-4">
-                    <p className="text-gray-700 mb-4">
+                  <TabsContent value="lifestyle" className="pt-4 bg-gray-100 p-6 rounded-xl">
+                    <p className="text-gray-700 mb-4 bg-white p-4 rounded-lg shadow-sm">
                       Along with medical treatments, lifestyle changes play a crucial role in managing symptoms and preventing recurrence. Our doctors will provide personalized advice based on your specific condition and lifestyle.
                     </p>
-                    <ul className="space-y-3">
-                      {selectedPiles.treatments.lifestyle.map((change, index) => (
-                        <li key={index} className="flex items-start">
-                          <Check size={18} className="text-gray-600 mr-2 mt-1 flex-shrink-0" />
-                          <span className="text-gray-700">{change}</span>
-                        </li>
-                      ))}
-                    </ul>
+                    <div className="bg-gradient-to-r from-gray-50 to-gray-100 p-4 rounded-lg">
+                      <ul className="space-y-3">
+                        {selectedPiles.treatments.lifestyle.map((change, index) => (
+                          <li key={index} className="flex items-start bg-white/80 p-3 rounded-lg transition-transform hover:translate-x-1">
+                            <Check size={18} className="text-gray-600 mr-2 mt-1 flex-shrink-0" />
+                            <span className="text-gray-700">{change}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </TabsContent>
                 </Tabs>
               </div>
               
-              <div className="mb-10">
-                <h3 className="text-xl font-semibold text-gray-800 mb-4">Prevention Tips</h3>
+              <div className="mb-10 bg-gradient-to-b from-white to-herb-50 rounded-xl p-6 shadow-sm">
+                <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-herb-600 mr-2">
+                    <path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3"></path>
+                    <path d="M8 15v1a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6v-4"></path>
+                    <circle cx="20" cy="10" r="2"></circle>
+                  </svg>
+                  Prevention Tips
+                </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {selectedPiles.prevention.map((tip, index) => (
-                    <div key={index} className="bg-gray-50 p-4 rounded-lg flex">
-                      <div className="w-6 h-6 rounded-full bg-herb-100 text-herb-700 flex items-center justify-center mr-3 flex-shrink-0">
+                    <div key={index} className="bg-white p-4 rounded-lg flex shadow-sm transition-all hover:shadow-md hover:translate-y-[-2px]">
+                      <div className="w-8 h-8 rounded-full bg-herb-100 text-herb-700 flex items-center justify-center mr-3 flex-shrink-0">
                         {index + 1}
                       </div>
                       <p className="text-gray-700">{tip}</p>
@@ -881,37 +907,43 @@ const PilesDetail = () => {
             </div>
             
             {/* Sidebar */}
-            <div className="lg:w-1/3">
-              <div className="bg-gray-50 p-6 rounded-xl shadow-sm mb-6">
-                <h3 className="text-xl font-bold text-gray-800 mb-4">Consult Our Specialists</h3>
-                <p className="text-gray-700 mb-4">
+            <div className="lg:w-1/3 space-y-6">
+              <div className="bg-gradient-to-br from-ayush-600 to-herb-600 p-6 rounded-xl shadow-md text-white">
+                <h3 className="text-xl font-bold text-white mb-4">Consult Our Specialists</h3>
+                <p className="text-white/90 mb-4">
                   Our experienced doctors specialize in treating all types of piles with both traditional Ayurvedic methods and modern techniques.
                 </p>
-                <CTAButton to="/contact" variant="primary" icon={<Phone size={18} />} className="w-full">
+                <CTAButton to="/contact" variant="secondary" icon={<Phone size={18} />} className="w-full bg-white hover:bg-white/90 text-herb-700 border-0">
                   Book Consultation
                 </CTAButton>
               </div>
               
-              <div className="bg-herb-50 p-6 rounded-xl shadow-sm mb-6">
-                <h3 className="text-xl font-bold text-gray-800 mb-4">Why Choose Us for {selectedPiles.name}</h3>
+              <div className="bg-herb-50 p-6 rounded-xl shadow-sm border border-herb-100">
+                <h3 className="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-herb-600 mr-2">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                  </svg>
+                  Why Choose Us for {selectedPiles.name}
+                </h3>
                 <ul className="space-y-3">
-                  <li className="flex items-start">
+                  <li className="flex items-start p-3 bg-white rounded-lg shadow-sm">
                     <Check size={18} className="text-herb-600 mr-2 mt-1 flex-shrink-0" />
                     <span className="text-gray-700">Specialized expertise in all types of piles</span>
                   </li>
-                  <li className="flex items-start">
+                  <li className="flex items-start p-3 bg-white rounded-lg shadow-sm">
                     <Check size={18} className="text-herb-600 mr-2 mt-1 flex-shrink-0" />
                     <span className="text-gray-700">Blend of traditional and modern treatments</span>
                   </li>
-                  <li className="flex items-start">
+                  <li className="flex items-start p-3 bg-white rounded-lg shadow-sm">
                     <Check size={18} className="text-herb-600 mr-2 mt-1 flex-shrink-0" />
                     <span className="text-gray-700">Personalized treatment plans</span>
                   </li>
-                  <li className="flex items-start">
+                  <li className="flex items-start p-3 bg-white rounded-lg shadow-sm">
                     <Check size={18} className="text-herb-600 mr-2 mt-1 flex-shrink-0" />
                     <span className="text-gray-700">Proven results with thousands of satisfied patients</span>
                   </li>
-                  <li className="flex items-start">
+                  <li className="flex items-start p-3 bg-white rounded-lg shadow-sm">
                     <Check size={18} className="text-herb-600 mr-2 mt-1 flex-shrink-0" />
                     <span className="text-gray-700">Minimal discomfort and faster recovery</span>
                   </li>
@@ -920,24 +952,38 @@ const PilesDetail = () => {
               
               <div className="bg-white border border-gray-200 p-6 rounded-xl shadow-sm">
                 <h3 className="text-xl font-bold text-gray-800 mb-4">Other Types of Piles</h3>
-                <ul className="space-y-2">
+                <div className="divide-y divide-gray-100">
                   {Object.keys(pilesData).map((pileType) => {
                     if (pileType !== type) {
                       return (
-                        <li key={pileType}>
-                          <Link 
-                            to={`/piles/${pileType}`} 
-                            className="text-herb-600 hover:text-herb-800 hover:underline flex items-center"
-                          >
-                            <ArrowRight size={14} className="mr-2" />
-                            {pilesData[pileType].name}
-                          </Link>
-                        </li>
+                        <Link 
+                          key={pileType}
+                          to={`/piles/${pileType}`} 
+                          className="text-herb-600 hover:text-herb-800 hover:bg-herb-50 flex items-center p-3 rounded-lg transition-colors"
+                        >
+                          <ArrowRight size={14} className="mr-2 text-herb-500" />
+                          <span>{pilesData[pileType].name}</span>
+                        </Link>
                       );
                     }
                     return null;
                   })}
-                </ul>
+                </div>
+              </div>
+              
+              <div className="bg-gray-50 p-6 rounded-xl shadow-sm border border-gray-100">
+                <blockquote className="italic text-gray-700 mb-4">
+                  "The Ksharsutra treatment completely resolved my piles issue. I'm grateful to the entire team for their expertise and care."
+                </blockquote>
+                <div className="flex items-center">
+                  <div className="bg-herb-200 w-10 h-10 rounded-full flex items-center justify-center text-herb-700 font-bold mr-3">
+                    RS
+                  </div>
+                  <div>
+                    <p className="font-medium">Rahul S.</p>
+                    <p className="text-sm text-gray-500">Patient, Cured from {selectedPiles.name}</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -945,17 +991,26 @@ const PilesDetail = () => {
       </section>
       
       {/* CTA Section */}
-      <section className="bg-gradient-to-r from-ayush-600 to-herb-600 py-12">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white">
-            Get Effective Treatment for {selectedPiles.name}
-          </h2>
-          <p className="text-white/90 mb-6 max-w-2xl mx-auto">
-            Don't let hemorrhoids affect your quality of life. Our specialists offer personalized treatment plans combining Ayurvedic wisdom with modern techniques for complete relief.
-          </p>
-          <CTAButton to="/contact" variant="secondary" size="lg" icon={<Phone size={20} />} className="bg-white text-herb-700">
-            Schedule Your Consultation Today
-          </CTAButton>
+      <section className="bg-gradient-to-br from-ayush-600 to-herb-700 py-16 relative overflow-hidden">
+        <div className="absolute inset-0 bg-pattern opacity-10"></div>
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <div className="max-w-2xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white drop-shadow-sm">
+              Get Effective Treatment for {selectedPiles.name}
+            </h2>
+            <div className="w-24 h-1 bg-white/30 mx-auto mb-6 rounded-full"></div>
+            <p className="text-white/90 mb-8 max-w-2xl mx-auto">
+              Don't let hemorrhoids affect your quality of life. Our specialists offer personalized treatment plans combining Ayurvedic wisdom with modern techniques for complete relief.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <CTAButton to="/contact" variant="secondary" size="lg" icon={<Phone size={20} />} className="bg-white text-herb-700 hover:bg-white/90 px-8">
+                Schedule Your Consultation Today
+              </CTAButton>
+              <CTAButton to="/services" variant="outline" size="lg" className="bg-transparent border-white text-white hover:bg-white/10">
+                View All Services
+              </CTAButton>
+            </div>
+          </div>
         </div>
       </section>
     </div>
