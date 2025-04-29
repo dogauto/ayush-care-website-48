@@ -1,6 +1,10 @@
+
 import { SectionHeading } from "@/components/ui/section-heading";
 import { CTAButton } from "@/components/ui/cta-button";
-import { Check, Phone } from "lucide-react";
+import { Check, Phone, ChevronRight } from "lucide-react";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import { Card, CardContent } from "@/components/ui/card";
+
 const Services = () => {
   return <div>
       {/* Hero Section */}
@@ -58,7 +62,7 @@ const Services = () => {
               <img alt="Medical illustration of Piles" className="rounded-xl shadow-md w-full h-auto object-cover" src="/lovable-uploads/c550f286-59e3-4a2c-a285-89de3aa3392c.jpg" />
             </div>
             <div className="lg:w-1/2">
-              <SectionHeading title="Piles (হেমোরয়ে��স)" subtitle="Effective, permanent relief from hemorrhoids" centered={false} />
+              <SectionHeading title="Piles (হেমোরয়েডস)" subtitle="Effective, permanent relief from hemorrhoids" centered={false} />
               
               <h3 className="text-xl font-bold mb-3 text-gray-800">What are Piles?</h3>
               <p className="text-gray-700 mb-6">
@@ -73,42 +77,164 @@ const Services = () => {
                 <li>Swelling around the anus</li>
                 <li>A lump near the anus, which may be sensitive or painful</li>
               </ul>
+
+              <Tabs defaultValue="types" className="w-full mb-6">
+                <TabsList className="grid w-full grid-cols-2">
+                  <TabsTrigger value="types">Types of Piles</TabsTrigger>
+                  <TabsTrigger value="treatment">Our Treatments</TabsTrigger>
+                </TabsList>
+                <TabsContent value="types" className="pt-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <Card>
+                      <CardContent className="p-4">
+                        <h4 className="font-bold text-gray-800 mb-2 flex items-center">
+                          <ChevronRight size={18} className="text-herb-600 mr-1" />
+                          Internal Piles
+                        </h4>
+                        <p className="text-gray-600 text-sm">
+                          Located inside the rectum and usually painless but may cause bleeding.
+                        </p>
+                      </CardContent>
+                    </Card>
+                    
+                    <Card>
+                      <CardContent className="p-4">
+                        <h4 className="font-bold text-gray-800 mb-2 flex items-center">
+                          <ChevronRight size={18} className="text-herb-600 mr-1" />
+                          External Piles
+                        </h4>
+                        <p className="text-gray-600 text-sm">
+                          Develop under the skin around the anus, often causing pain and discomfort.
+                        </p>
+                      </CardContent>
+                    </Card>
+                    
+                    <Card>
+                      <CardContent className="p-4">
+                        <h4 className="font-bold text-gray-800 mb-2 flex items-center">
+                          <ChevronRight size={18} className="text-herb-600 mr-1" />
+                          Bleeding Piles
+                        </h4>
+                        <p className="text-gray-600 text-sm">
+                          Characterized by bright red blood during bowel movements, requiring prompt treatment.
+                        </p>
+                      </CardContent>
+                    </Card>
+                    
+                    <Card>
+                      <CardContent className="p-4">
+                        <h4 className="font-bold text-gray-800 mb-2 flex items-center">
+                          <ChevronRight size={18} className="text-herb-600 mr-1" />
+                          Blind Piles
+                        </h4>
+                        <p className="text-gray-600 text-sm">
+                          Non-bleeding hemorrhoids that cause discomfort and pain without visible bleeding.
+                        </p>
+                      </CardContent>
+                    </Card>
+                    
+                    <Card>
+                      <CardContent className="p-4">
+                        <h4 className="font-bold text-gray-800 mb-2 flex items-center">
+                          <ChevronRight size={18} className="text-herb-600 mr-1" />
+                          Thrombosed Piles
+                        </h4>
+                        <p className="text-gray-600 text-sm">
+                          Blood clots form within external hemorrhoids, causing severe pain and inflammation.
+                        </p>
+                      </CardContent>
+                    </Card>
+                    
+                    <Card>
+                      <CardContent className="p-4">
+                        <h4 className="font-bold text-gray-800 mb-2 flex items-center">
+                          <ChevronRight size={18} className="text-herb-600 mr-1" />
+                          Prolapsed Piles
+                        </h4>
+                        <p className="text-gray-600 text-sm">
+                          Internal hemorrhoids that protrude outside the anal opening, causing discomfort.
+                        </p>
+                      </CardContent>
+                    </Card>
+                  </div>
+                </TabsContent>
+                <TabsContent value="treatment" className="pt-4">
+                  <div className="grid grid-cols-1 gap-3 mb-4">
+                    <div className="flex items-start">
+                      <Check size={20} className="text-herb-600 mr-2 mt-1" />
+                      <div>
+                        <h4 className="font-semibold text-gray-800">Ayurvedic Medications</h4>
+                        <p className="text-gray-600 text-sm">Herbal preparations to reduce inflammation and pain</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start">
+                      <Check size={20} className="text-herb-600 mr-2 mt-1" />
+                      <div>
+                        <h4 className="font-semibold text-gray-800">Ksharsutra Therapy</h4>
+                        <p className="text-gray-600 text-sm">A specialized Ayurvedic technique for grade II-III hemorrhoids</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start">
+                      <Check size={20} className="text-herb-600 mr-2 mt-1" />
+                      <div>
+                        <h4 className="font-semibold text-gray-800">Laser Treatment</h4>
+                        <p className="text-gray-600 text-sm">Advanced, minimally invasive procedure for quick recovery</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start">
+                      <Check size={20} className="text-herb-600 mr-2 mt-1" />
+                      <div>
+                        <h4 className="font-semibold text-gray-800">Dietary and Lifestyle Guidance</h4>
+                        <p className="text-gray-600 text-sm">Personalized advice to prevent recurrence</p>
+                      </div>
+                    </div>
+                  </div>
+                </TabsContent>
+              </Tabs>
               
-              <h3 className="text-xl font-bold mb-3 text-gray-800">Our Treatment Approach</h3>
-              <p className="text-gray-700 mb-6">
-                At AYUSH HEALTH CARE, we offer both Ayurvedic and modern treatments for piles, depending on the severity and type of your condition. Our methods include:
-              </p>
-              
-              <div className="grid grid-cols-1 gap-3 mb-8">
-                <div className="flex items-start">
-                  <Check size={20} className="text-herb-600 mr-2 mt-1" />
+              <details className="mb-6">
+                <summary className="font-semibold text-gray-800 cursor-pointer hover:text-herb-600 transition-colors">
+                  Additional Types of Piles We Treat
+                </summary>
+                <div className="pl-4 pt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <h4 className="font-semibold text-gray-800">Ayurvedic Medications</h4>
-                    <p className="text-gray-600 text-sm">Herbal preparations to reduce inflammation and pain</p>
+                    <h5 className="font-semibold text-gray-800 mb-1">Aggregate Piles</h5>
+                    <p className="text-gray-600 text-sm mb-3">
+                      A collection of multiple hemorrhoids that have developed simultaneously, requiring comprehensive treatment.
+                    </p>
+                  </div>
+                  <div>
+                    <h5 className="font-semibold text-gray-800 mb-1">End Bearing Piles</h5>
+                    <p className="text-gray-600 text-sm mb-3">
+                      Hemorrhoids located at the terminal end of the anal canal, often causing significant discomfort during bowel movements.
+                    </p>
+                  </div>
+                  <div>
+                    <h5 className="font-semibold text-gray-800 mb-1">Steel Piles</h5>
+                    <p className="text-gray-600 text-sm mb-3">
+                      A colloquial term for very firm or hardened hemorrhoids that are particularly resistant to conventional treatments.
+                    </p>
+                  </div>
+                  <div>
+                    <h5 className="font-semibold text-gray-800 mb-1">Friction Pile</h5>
+                    <p className="text-gray-600 text-sm mb-3">
+                      Hemorrhoids that become irritated due to friction during movement or physical activity, common in athletes.
+                    </p>
+                  </div>
+                  <div>
+                    <h5 className="font-semibold text-gray-800 mb-1">Sheet Piles</h5>
+                    <p className="text-gray-600 text-sm mb-3">
+                      A term for hemorrhoids that have spread in a sheet-like pattern around the anal area, requiring specialized treatment.
+                    </p>
+                  </div>
+                  <div>
+                    <h5 className="font-semibold text-gray-800 mb-1">Bored Piles</h5>
+                    <p className="text-gray-600 text-sm mb-3">
+                      Internal hemorrhoids that have created deeper tissue damage, often requiring more intensive therapeutic approaches.
+                    </p>
                   </div>
                 </div>
-                <div className="flex items-start">
-                  <Check size={20} className="text-herb-600 mr-2 mt-1" />
-                  <div>
-                    <h4 className="font-semibold text-gray-800">Ksharsutra Therapy</h4>
-                    <p className="text-gray-600 text-sm">A specialized Ayurvedic technique for grade II-III hemorrhoids</p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <Check size={20} className="text-herb-600 mr-2 mt-1" />
-                  <div>
-                    <h4 className="font-semibold text-gray-800">Laser Treatment</h4>
-                    <p className="text-gray-600 text-sm">Advanced, minimally invasive procedure for quick recovery</p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <Check size={20} className="text-herb-600 mr-2 mt-1" />
-                  <div>
-                    <h4 className="font-semibold text-gray-800">Dietary and Lifestyle Guidance</h4>
-                    <p className="text-gray-600 text-sm">Personalized advice to prevent recurrence</p>
-                  </div>
-                </div>
-              </div>
+              </details>
               
               <CTAButton to="/contact" variant="primary" icon={<Phone size={18} />}>
                 Consult for Piles Treatment
