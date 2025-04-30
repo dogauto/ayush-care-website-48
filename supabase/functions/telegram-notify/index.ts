@@ -34,6 +34,12 @@ serve(async (req) => {
 `;
 
     console.log("Sending to Telegram:", message);
+    console.log("Using bot token:", TELEGRAM_BOT_TOKEN ? "Token exists" : "No token found");
+
+    // Check if token exists
+    if (!TELEGRAM_BOT_TOKEN) {
+      throw new Error("Telegram bot token not found in environment variables");
+    }
 
     // Send the message to Telegram
     const telegramResponse = await fetch(

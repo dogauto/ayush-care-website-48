@@ -4,15 +4,16 @@ import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { saveAppointment } from "@/services/appointmentService";
 import { saveAppointmentToSupabase } from "@/services/supabaseAppointmentService";
 import { useNavigate } from "react-router-dom";
 import { useToast } from "@/components/ui/use-toast";
+
 const Contact = () => {
   const navigate = useNavigate();
   const {
     toast
   } = useToast();
+  
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -21,8 +22,10 @@ const Contact = () => {
     message: "",
     date: ""
   });
+  
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const {
       name,
@@ -33,12 +36,26 @@ const Contact = () => {
       [name]: value
     }));
   };
+  
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    
     try {
+      // Validate required fields
+      if (!formData.name || !formData.phone || !formData.date) {
+        toast({
+          title: "Missing Information",
+          description: "Please fill in all required fields (name, phone, and preferred date).",
+          variant: "destructive"
+        });
+        setIsSubmitting(false);
+        return;
+      }
+      
       // Save appointment to Supabase
       const success = await saveAppointmentToSupabase(formData);
+      
       if (success) {
         // Show success and reset form
         setIsSubmitting(false);
@@ -51,6 +68,7 @@ const Contact = () => {
           message: "",
           date: ""
         });
+        
         toast({
           title: "Appointment Requested",
           description: "Your appointment request has been submitted successfully.",
@@ -74,6 +92,7 @@ const Contact = () => {
       });
     }
   };
+  
   return <div>
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-ayush-50 to-herb-50 py-16">
@@ -227,7 +246,7 @@ const Contact = () => {
           <SectionHeading title="Find Us" subtitle="Located conveniently in Barasat, North 24 Parganas" centered={true} />
           
           <div className="rounded-xl overflow-hidden shadow-sm h-[400px]">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3684.065708877237!2d88.41352637427606!3d22.57953813617391!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0275acdf1dde79%3A0x9d21975f53d4d625!2sAyush%20Health%20Care!5e0!3m2!1sen!2sin!4v1719248901882!5m2!1sen!2sin!4v1719248901882!5m2!1sen!2sin" width="100%" height="400" style={{
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3684.065708877237!2d88.41352637427606!3d22.57953813617391!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0275acdf1dde79%3A0x9d21975f53d4d625!2sAyush%20Health%20Care!5e0!3m2!1sen!2sin!4v1719248901882!5m2!1sen!2sin!4v1719248901882!5m2!1sen!2sin!4v1719248901882!5m2!1sen!2sin" width="100%" height="400" style={{
             border: 0
           }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" className="w-full h-full" />
           </div>
@@ -253,4 +272,5 @@ const Contact = () => {
       </section>
     </div>;
 };
+
 export default Contact;
