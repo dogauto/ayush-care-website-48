@@ -8,7 +8,6 @@ import { saveAppointment } from "@/services/appointmentService";
 import { saveAppointmentToSupabase } from "@/services/supabaseAppointmentService";
 import { useNavigate } from "react-router-dom";
 import { useToast } from "@/components/ui/use-toast";
-
 const Contact = () => {
   const navigate = useNavigate();
   const {
@@ -37,11 +36,9 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
     try {
       // Save appointment to Supabase
       const success = await saveAppointmentToSupabase(formData);
-      
       if (success) {
         // Show success and reset form
         setIsSubmitting(false);
@@ -54,13 +51,12 @@ const Contact = () => {
           message: "",
           date: ""
         });
-        
         toast({
           title: "Appointment Requested",
           description: "Your appointment request has been submitted successfully.",
           variant: "default"
         });
-        
+
         // Reset success message after a few seconds and redirect
         setTimeout(() => {
           setIsSubmitted(false);
@@ -169,16 +165,12 @@ const Contact = () => {
                   </div> : <form onSubmit={handleSubmit}>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                       <div>
-                        <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-                          Full Name *
-                        </label>
+                        <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Full Name </label>
                         <Input id="name" name="name" value={formData.name} onChange={handleChange} placeholder="Enter your full name" required />
                       </div>
                       
                       <div>
-                        <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
-                          Phone Number *
-                        </label>
+                        <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">Phone Number </label>
                         <Input id="phone" name="phone" value={formData.phone} onChange={handleChange} placeholder="Enter your phone number" required />
                       </div>
                       
@@ -190,9 +182,7 @@ const Contact = () => {
                       </div>
                       
                       <div>
-                        <label htmlFor="condition" className="block text-sm font-medium text-gray-700 mb-1">
-                          Condition *
-                        </label>
+                        <label htmlFor="condition" className="block text-sm font-medium text-gray-700 mb-1">Condition </label>
                         <select id="condition" name="condition" value={formData.condition} onChange={handleChange} className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" required>
                           <option value="">Select your condition</option>
                           <option value="Piles (Hemorrhoids)">Piles (Hemorrhoids)</option>
@@ -205,9 +195,7 @@ const Contact = () => {
                       </div>
                       
                       <div>
-                        <label htmlFor="date" className="block text-sm font-medium text-gray-700 mb-1">
-                          Preferred Date *
-                        </label>
+                        <label htmlFor="date" className="block text-sm font-medium text-gray-700 mb-1">Preferred Date </label>
                         <Input id="date" name="date" type="date" value={formData.date} onChange={handleChange} min={new Date().toISOString().split('T')[0]} required />
                       </div>
                     </div>
