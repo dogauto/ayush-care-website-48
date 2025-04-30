@@ -6,7 +6,7 @@ import { saveAppointment as saveAppointmentToLocalStorage } from "./appointmentS
 // Save appointment to Supabase
 export const saveAppointmentToSupabase = async (appointmentData: Omit<Appointment, "id" | "createdAt" | "status">): Promise<boolean> => {
   try {
-    // Map our form data to match Supabase table column names
+    // Create a database entry first
     const { error } = await supabase
       .from('Book an Appointment')
       .insert({
@@ -25,7 +25,7 @@ export const saveAppointmentToSupabase = async (appointmentData: Omit<Appointmen
     // Also save to localStorage as a backup
     saveAppointmentToLocalStorage(appointmentData);
     
-    // Notify Telegram bot about the new appointment
+    // Now notify via Telegram separately
     try {
       const notifyResponse = await fetch('https://jieiqtgswrpvrswqamfo.supabase.co/functions/v1/telegram-notify', {
         method: 'POST',
@@ -35,10 +35,13 @@ export const saveAppointmentToSupabase = async (appointmentData: Omit<Appointmen
         body: JSON.stringify(appointmentData),
       });
 
+      const responseData = await notifyResponse.json();
+      
       if (!notifyResponse.ok) {
-        console.error("Error notifying Telegram:", await notifyResponse.text());
+        console.error("Error notifying Telegram:", responseData);
+        // We don't return false here as the appointment was saved to Supabase successfully
       } else {
-        console.log("Telegram notification sent successfully");
+        console.log("Telegram notification sent successfully", responseData);
       }
     } catch (notifyError) {
       console.error("Failed to send Telegram notification:", notifyError);
