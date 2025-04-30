@@ -6,7 +6,9 @@ import { saveAppointment as saveAppointmentToLocalStorage } from "./appointmentS
 // Save appointment to Supabase
 export const saveAppointmentToSupabase = async (appointmentData: Omit<Appointment, "id" | "createdAt" | "status">): Promise<boolean> => {
   try {
-    // Create a database entry first
+    console.log("Saving appointment data to Supabase:", appointmentData);
+    
+    // Create a database entry
     const { data, error } = await supabase
       .from('Book an Appointment')
       .insert({
@@ -14,7 +16,7 @@ export const saveAppointmentToSupabase = async (appointmentData: Omit<Appointmen
         'Phone Number': appointmentData.phone,
         'Email Address': appointmentData.email,
         'Preferred Date': appointmentData.date,
-        'Additional Information': appointmentData.message
+        'Additional Information': appointmentData.message || ''
       })
       .select();
 
@@ -23,21 +25,30 @@ export const saveAppointmentToSupabase = async (appointmentData: Omit<Appointmen
       return false;
     }
     
+    console.log("Successfully saved to Supabase:", data);
+    
     // Also save to localStorage as a backup
     saveAppointmentToLocalStorage(appointmentData);
     
-    // Now notify via Telegram separately - use direct edge function call
+    // Now notify via Telegram using direct edge function call
     try {
-      const notifyResponse = await fetch('https://jieiqtgswrpvrswqamfo.supabase.co/functions/v1/telegram-notify', {
+      const telegramNotifyUrl = 'https://jieiqtgswrpvrswqamfo.supabase.co/functions/v1/telegram-notify';
+      console.log("Calling Telegram notification endpoint:", telegramNotifyUrl);
+      
+      // Get access token for authorization
+      const { data: { session } } = await supabase.auth.getSession();
+      const accessToken = session?.access_token;
+      
+      const notifyResponse = await fetch(telegramNotifyUrl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${supabase.auth.getSession().then(({ data }) => data?.session?.access_token)}`,
+          'Authorization': accessToken ? `Bearer ${accessToken}` : '',
         },
         body: JSON.stringify(appointmentData),
       });
 
-      // Process response - note that we're continuing even if notification fails
+      // Process response
       try {
         const responseData = await notifyResponse.json();
         
