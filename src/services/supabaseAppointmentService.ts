@@ -7,7 +7,7 @@ import { saveAppointment as saveAppointmentToLocalStorage } from "./appointmentS
 export const saveAppointmentToSupabase = async (appointmentData: Omit<Appointment, "id" | "createdAt" | "status">): Promise<boolean> => {
   try {
     // Create a database entry first
-    const { error } = await supabase
+    const { data, error } = await supabase
       .from('Book an Appointment')
       .insert({
         'Full Name': appointmentData.name,
@@ -15,7 +15,8 @@ export const saveAppointmentToSupabase = async (appointmentData: Omit<Appointmen
         'Email Address': appointmentData.email,
         'Preferred Date': appointmentData.date,
         'Additional Information': appointmentData.message
-      });
+      })
+      .select();
 
     if (error) {
       console.error("Error saving to Supabase:", error);
@@ -25,23 +26,29 @@ export const saveAppointmentToSupabase = async (appointmentData: Omit<Appointmen
     // Also save to localStorage as a backup
     saveAppointmentToLocalStorage(appointmentData);
     
-    // Now notify via Telegram separately
+    // Now notify via Telegram separately - use direct edge function call
     try {
       const notifyResponse = await fetch('https://jieiqtgswrpvrswqamfo.supabase.co/functions/v1/telegram-notify', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Authorization': `Bearer ${supabase.auth.getSession().then(({ data }) => data?.session?.access_token)}`,
         },
         body: JSON.stringify(appointmentData),
       });
 
-      const responseData = await notifyResponse.json();
-      
-      if (!notifyResponse.ok) {
-        console.error("Error notifying Telegram:", responseData);
-        // We don't return false here as the appointment was saved to Supabase successfully
-      } else {
-        console.log("Telegram notification sent successfully", responseData);
+      // Process response - note that we're continuing even if notification fails
+      try {
+        const responseData = await notifyResponse.json();
+        
+        if (!notifyResponse.ok) {
+          console.error("Error notifying Telegram:", responseData);
+          // We don't return false here as the appointment was saved to Supabase successfully
+        } else {
+          console.log("Telegram notification sent successfully", responseData);
+        }
+      } catch (parseError) {
+        console.error("Error parsing Telegram notification response:", parseError);
       }
     } catch (notifyError) {
       console.error("Failed to send Telegram notification:", notifyError);

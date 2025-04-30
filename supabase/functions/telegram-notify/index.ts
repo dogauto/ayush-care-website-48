@@ -34,43 +34,60 @@ serve(async (req) => {
 `;
 
     console.log("Sending to Telegram:", message);
-    console.log("Using bot token:", TELEGRAM_BOT_TOKEN ? "Token exists" : "No token found");
-
+    
     // Check if token exists
     if (!TELEGRAM_BOT_TOKEN) {
-      throw new Error("Telegram bot token not found in environment variables");
+      console.error("Telegram bot token not found in environment variables");
+      return new Response(
+        JSON.stringify({ success: false, error: "Telegram bot token not configured" }),
+        {
+          headers: { ...corsHeaders, "Content-Type": "application/json" },
+          status: 500,
+        }
+      );
     }
 
     // Send the message to Telegram
-    const telegramResponse = await fetch(
-      `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          chat_id: TELEGRAM_CHAT_ID,
-          text: message,
-          parse_mode: "HTML",
-        }),
+    try {
+      const telegramResponse = await fetch(
+        `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            chat_id: TELEGRAM_CHAT_ID,
+            text: message,
+            parse_mode: "HTML",
+          }),
+        }
+      );
+
+      const telegramResult = await telegramResponse.json();
+      console.log("Telegram API response:", telegramResult);
+
+      if (!telegramResponse.ok) {
+        throw new Error(`Telegram API error: ${JSON.stringify(telegramResult)}`);
       }
-    );
 
-    const telegramResult = await telegramResponse.json();
-    console.log("Telegram API response:", telegramResult);
-
-    if (!telegramResponse.ok) {
-      throw new Error(`Telegram API error: ${JSON.stringify(telegramResult)}`);
+      return new Response(
+        JSON.stringify({ success: true, message: "Notification sent to Telegram" }),
+        {
+          headers: { ...corsHeaders, "Content-Type": "application/json" },
+          status: 200,
+        }
+      );
+    } catch (telegramError) {
+      console.error("Error sending to Telegram API:", telegramError);
+      return new Response(
+        JSON.stringify({ success: false, error: telegramError.message }),
+        {
+          headers: { ...corsHeaders, "Content-Type": "application/json" },
+          status: 500,
+        }
+      );
     }
-
-    return new Response(
-      JSON.stringify({ success: true, message: "Notification sent to Telegram" }),
-      {
-        headers: { ...corsHeaders, "Content-Type": "application/json" },
-        status: 200,
-      }
-    );
   } catch (error) {
     console.error("Error in telegram-notify function:", error);
     return new Response(
